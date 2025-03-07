@@ -1,38 +1,63 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    text-align: center;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #fff;
+
+/* Estilos para la navegación */
+.nav {
+    display: flex;
+    justify-content: flex-end; /* Alineado a la derecha */
+    list-style: none;
+    background-color: #4682B4;
+    padding: 10px;
+    margin: 0;
 }
-.descripcion {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
+
+.nav-item {
+    margin-left: 15px; /* Espacio entre elementos */
 }
-.imagen-mascotas {
-    width: 100%;
-    border-radius: 10px;
-}
-h1 {
-    color: rgb(81, 194, 231);
-}
-.contacto {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #e3f2fd;
-    border-radius: 10px;
-}
-.contacto a {
+
+.nav-link {
     text-decoration: none;
-    color: #007bff;
-    margin: 5px;
+    color: #FFFFFF;    
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.nav-link:hover {
+    background: #007bff;
+    color: white;
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.imagen-mascotas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Contacto */
+.contacto {
+    text-align: center;
+    background-color: #D3D3D3;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.contacto a {
+    color: #0000EE;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contacto a:hover {
+    text-decoration: underline;
 }
