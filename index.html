@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Mascotas</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400&family=Roboto:wght@400&family=Montserrat:wght@500&family=Poppins:wght@500&family=Lora:wght@700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <ul class="nav">
+<body style="margin: 0; font-family: playfair display ; font-size: 50; font-weight: bold; font-style: italic;">
+    <ul class="nav" style="display: flex; align-items: center; padding: 15px; height: 80px;">
+        <li class="nav-item" style="margin-right: auto; display: flex; align-items: center;">
+            <img src="LogoSinFondo.png" alt="PawPal Logo" style="height: 100px; margin-right: 10px;">
+            <img src="NombreSinFondo.png" alt="PawPal Nombre" style="height: 230px;" style="width: 100px;">
+        </li>
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
@@ -23,19 +30,55 @@
     </ul>
     
     <div class="container">
-        <h1>PAWPAL</h1>
-        <p class="descripcion">Registra a tu mascota fácilmente y lleva un control de sus datos de manera rápida y sencilla.</p>
-        <img class="imagen-mascotas" src="im1.jpg" alt="Imagen de mascotas">
+        <img src="perro.jpg" alt="Imagen" class="background-image"/>
+        <div class="overlay">
+            <p class="intro">¡Bienvenido a tu comunidad de mascotas!<br>Únete y disfruta del cuidado fácil y divertido para tus peludos.</p>
+            <a href="#" class="btn-registro">¡Regístrate Ahora!</a>
+        </div>
     </div>
 
-    <div class="contacto">
-        <h2>Contacto</h2>
-        <p>📞 Teléfono: +123 456 789 </p>
-        <p>📧 Correo: infopawpal@mascotas.com</p>
-        <p>🌐 Síguenos en redes sociales:</p>
-        <a href="#" target="_blank">Facebook</a> |
-        <a href="#" target="_blank">Twitter</a> |
-        <a href="#" target="_blank">Instagram</a>
+    <div class="info-container">
+        <h2>¿QUÉ TE OFRECEMOS EN PAWPAL?</h2>
+        <p>Queremos facilitarte la gestión de la salud de tu mascota y que disfrutes al máximo con ella.</p>
+        <div class="features">
+            <div class="feature">
+                <img src="documento.png" alt="Documento">
+                <p><strong>Llevar toda su documentación importante en tu móvil</strong></p>
+            </div>
+            <div class="feature">
+                <img src="sos.png" alt="SOS">
+                <p><strong>Auxilio inmediato ante pérdida o extravío</strong></p>
+            </div>
+            <div class="feature">
+                <img src="ubicacion.png" alt="Ubicación">
+                <p><strong>Más de 100.000 locales Pet Friendly en nuestro mapa</strong></p>
+            </div>
+            <div class="feature">
+                <img src="valoracion.png" alt="Valoraciones">
+                <p><strong>Valoraciones sociales y profesionales</strong><br>(Somos el TripAdvisor de los perros)</p>
+            </div>
+            <div class="feature">
+                <img src="valoracion.png" alt="Premios">
+                <p><strong>Premios y descuentos por valoraciones conseguidas de buena conducta</strong></p>
+            </div>
+            <div class="feature">
+                <img src="salud.png" alt="Salud">
+                <p><strong>Seguro de RC con TARIFA PLANA, válido para todas las razas</strong></p>
+            </div>
+        </div>
     </div>
+
+    <footer style="background-color: #333; color: white; padding: 10px; position: fixed; bottom: 0; width: 100%; text-align: center;">
+        <div style="display: flex; justify-content: center; gap: 10px;">
+            <span>📞 +123 456 789</span>
+            <span>📧 infopawpal@mascotas.com</span>
+            <span>🌐 Síguenos en 
+                <a href="#" style="color: #ffffff;" target="_blank">Facebook</a> | 
+                <a href="#" style="color: #ffffff;" target="_blank">Twitter</a> | 
+                <a href="#" style="color: #ffffff;" target="_blank">Instagram</a>
+            </span>
+        </div>
+    </footer>
+    
 </body>
 </html>
