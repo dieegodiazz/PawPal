@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="imagenes/PawPalNoFondo.png" alt="Logo">
+        </div>
+        <h2>Crear una cuenta</h2>
+        <form class="login-form">
+            <div class="input-row">
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="text" id="apellidos" placeholder="Apellidos" required>
+            </div>
+            <input type="number" id="edad" placeholder="Edad" required>
+            <input type="email" id="email" placeholder="Correo Electrónico" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <input type="text" id="domicilio" placeholder="Domicilio" required>
+            <input type="tel" id="telefono" placeholder="Número de Teléfono" required>
+
+            <button type="submit">Registrarse</button>
+        </form>
+        <div class="register-container">
+            ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+        </div>
+    </div>
+</body>
+</html>

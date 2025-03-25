@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #F5DEB3; /* Fondo claro */
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+/* Contenedor principal */
+.login-container {
+    width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Logo */
+.logo img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Título */
+.login-container h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Formulario */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+/* Labels */
+.login-form label {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Inputs */
+.login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Botón de inicio de sesión */
+.login-form button {
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Mensaje de registro */
+.register-message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.register-message a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-message a:hover {
+    text-decoration: underline;
+}

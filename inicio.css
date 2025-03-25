@@ -1,0 +1,179 @@
+/* Centrar el cuerpo de la página */
+body {
+    background-color: #F5DEB3;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+}
+
+/* Título principal */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px; /* Espacio entre el título y el contenido */
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%; /* Aumenta el tamaño del contenedor */
+    max-width: 800px; /* Limita el ancho máximo */
+    text-align: center;
+    padding: 20px;
+    background-color: #E3F2FD; /* Azul suave */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    margin-bottom: 20px; /* Espacio entre el contenedor principal y el botón */
+    color: #333; /* Texto oscuro para contraste */
+}
+
+/* Contenedor de perfiles */
+.profiles {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Centra horizontalmente los elementos */
+    gap: 20px; /* Espacio entre las imágenes de perfil y el botón */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si hay muchos */
+}
+
+/* Contenedor del perfil */
+.profile {
+    position: relative; /* Necesario para posicionar el botón dentro del contenedor */
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+/* Imagen del perfil */
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #90CAF9; /* Azul más oscuro para el borde */
+}
+
+.profile-img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+}
+
+.profile p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333; /* Texto oscuro */
+}
+
+/* Botón de añadir perfil */
+.add-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px; /* Tamaño similar al de las imágenes */
+    height: 120px;
+    border: 2px dashed #90CAF9; /* Azul más oscuro para el borde */
+    border-radius: 50%; /* Hace el botón redondo */
+    font-size: 36px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+.add-profile:hover {
+    background-color: #BBDEFB; /* Azul más claro al pasar el mouse */
+    color: #333;
+}
+
+/* Contenedor del botón de administrar */
+.admin-container {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    margin-top: 20px; /* Espacio entre el contenedor principal y el botón */
+}
+
+/* Botón de administrar perfiles */
+.admin-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF; /* Texto blanco */
+    background-color: #1976D2; /* Azul más oscuro */
+    border: 2px solid #1565C0; /* Borde ligeramente más oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    animation: fadeIn 1s ease; /* Aplica la animación fadeIn */
+}
+
+.admin-button:hover {
+    background-color: #1565C0; /* Fondo más oscuro al pasar el mouse */
+    color: #E3F2FD; /* Texto azul claro */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra al pasar el mouse */
+}
+
+/* Animación fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botón de eliminar perfil */
+.delete-profile {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 20px;
+}
+
+.delete-profile:hover {
+    background-color: darkred;
+}
+
+/* Contenedor del logotipo */
+.logo-container {
+    display: flex; /* Alinea los elementos horizontalmente */
+    align-items: center; /* Centra verticalmente las imágenes */
+    position: absolute; /* Posiciona el contenedor en la parte superior izquierda */
+    top: 10px; /* Espacio desde la parte superior */
+    left: 10px; /* Espacio desde la parte izquierda */
+    z-index: 1000; /* Asegura que el logotipo esté por encima de otros elementos */
+}
+
+/* Estilo para el logotipo */
+.logo {
+    height: 100px; /* Ajusta la altura del logotipo */
+    margin-right: 10px; /* Espacio entre las dos imágenes */
+}
+
+/* Estilo para el nombre */
+.logo-name {
+    height: 150px; /* Aumenta la altura del nombre */
+    width: auto; /* Mantiene la proporción de la imagen */
+}

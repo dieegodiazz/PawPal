@@ -1,0 +1,178 @@
+/* Estilos generales */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #F5DEB3; /* Fondo claro */
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+/* Animación para el contenedor principal */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Inicia ligeramente desplazado hacia abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+.login-container {
+    width: 400px; /* Ajusta el ancho del contenedor */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Fondo blanco */
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out; /* Aplica la animación al contenedor */
+}
+
+/* Logo */
+.logo img {
+    max-width: 150px; /* Aumenta el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 20px; /* Espacio entre la imagen y el formulario */
+}
+
+/* Título */
+.login-container h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: backwards;
+}
+
+/* Animación para los elementos internos */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left; /* Asegura que todos los elementos dentro estén alineados a la izquierda */
+}
+
+.login-form label,
+.login-form input,
+.login-form button,
+.register-container {
+    animation: fadeIn 1s ease-out;
+    animation-delay: 0.2s; /* Retraso para que los elementos aparezcan después del contenedor */
+    animation-fill-mode: backwards; /* Asegura que los elementos estén ocultos antes de la animación */
+}
+
+/* Labels */
+.login-form label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Inputs */
+.login-form input {
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px;
+    width: 100%;
+    background-color: #fff; /* Fondo blanco */
+    color: #333; /* Texto oscuro */
+    outline: none;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+/* Inputs en dos columnas */
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.input-row input {
+    width: 50%;
+}
+
+/* Botón de registro */
+.login-form button {
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Links */
+.register-container {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-container a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-container a:hover {
+    text-decoration: underline;
+}
+
+/* REGISTRO DE MASCOTAS */ 
+/* Botón de archivo y eliminar selección */
+/* Contenedor de la vista previa */
+#preview-container {
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    margin-top: 10px; /* Espacio superior para separar del campo de archivo */
+}
+
+/* Imagen de vista previa */
+#preview {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    border: 1px solid #ccc; /* Borde claro */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 10px; /* Reduce el espacio inferior para acercar el botón */
+}
+
+/* Botón de eliminar selección */
+#remove-photo {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent; /* Fondo transparente */
+    color: #007BFF; /* Texto azul */
+    border: 1px solid #007BFF; /* Borde azul */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente consistente */
+    font-family: Arial, sans-serif; /* Tipografía consistente */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px; /* Reduce el espacio superior para acercar al contenido anterior */
+}
+
+#remove-photo:hover {
+    background-color: #007BFF; /* Fondo azul al pasar el mouse */
+    color: white; /* Texto blanco al pasar el mouse */
+}

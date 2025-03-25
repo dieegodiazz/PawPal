@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="login.js" defer></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="imagenes/PawPalNoFondo.png" alt="Logo">
+        </div>
+        <h2>Iniciar Sesión</h2>
+        <form class="login-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Escribe aquí" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="Escribe aquí" required>
+
+            <button type="submit" id="btn-login">Iniciar Sesión</button>
+
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        </form>
+
+        <div class="register-message">
+            ¿No tienes cuenta? <a href="register.html">Regístrate</a>
+        </div>
+    </div>
+</body>
+</html>
