@@ -11,21 +11,47 @@ body {
     color: #000;
 }
 
+/* Animación para el contenedor principal */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Inicia ligeramente desplazado hacia abajo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+/* Animación para los elementos internos */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Contenedor principal */
 .login-container {
-    width: 400px;
+    width: 400px; /* Ajusta el ancho del contenedor */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: #fff; /* Fondo blanco */
     text-align: center;
+    animation: fadeInUp 0.8s ease-out; /* Aplica la animación al contenedor */
 }
 
 /* Logo */
 .logo img {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 20px;
+    max-width: 150px; /* Aumenta el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 20px; /* Espacio entre la imagen y el formulario */
+    animation: fadeIn 1s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: backwards;
 }
 
 /* Título */
@@ -33,6 +59,9 @@ body {
     font-size: 20px;
     margin-bottom: 20px;
     font-weight: bold;
+    animation: fadeIn 1s ease-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: backwards;
 }
 
 /* Formulario */
@@ -40,27 +69,36 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    text-align: left;
+    text-align: left; /* Asegura que todos los elementos dentro estén alineados a la izquierda */
+}
+
+.login-form label,
+.login-form input,
+.login-form button {
+    animation: fadeIn 1s ease-out;
+    animation-delay: 0.6s; /* Retraso para que los elementos aparezcan después del contenedor */
+    animation-fill-mode: backwards; /* Asegura que los elementos estén ocultos antes de la animación */
 }
 
 /* Labels */
 .login-form label {
     font-size: 14px;
     font-weight: bold;
+    margin-bottom: 5px;
     text-align: left;
 }
 
 /* Inputs */
 .login-form input {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ccc; /* Borde claro */
+    border-radius: 5px; /* Bordes redondeados */
     font-size: 14px;
     width: 100%;
-    background-color: #fff;
-    color: #333;
+    background-color: #fff; /* Fondo blanco */
+    color: #333; /* Texto oscuro */
     outline: none;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
 
 /* Botón de inicio de sesión */
@@ -80,19 +118,59 @@ body {
     background-color: #0056b3;
 }
 
+/* Enlace de "Olvidaste tu contraseña" */
+.forgot-password {
+    font-size: 14px; /* Tamaño de fuente */
+    color: #007BFF; /* Mismo tono de azul que el resto de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.forgot-password:hover {
+    color: #0056b3; /* Azul más oscuro al pasar el mouse */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
 /* Mensaje de registro */
 .register-message {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #333;
+    margin-top: 20px; /* Espacio superior para separarlo del formulario */
+    font-size: 14px; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+    animation: fadeIn 1s ease-out;
+    animation-delay: 0.8s;
+    animation-fill-mode: backwards;
 }
 
 .register-message a {
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
+    color: #007BFF; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
 }
 
 .register-message a:hover {
-    text-decoration: underline;
+    color: #0056b3;
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Enlace para volver a la pantalla principal */
+.back-to-home {
+    margin-top: 20px; /* Espacio entre el contenedor principal y el enlace */
+    text-align: center; /* Centra el texto */
+}
+
+.back-to-home a {
+    font-size: 14px; /* Tamaño de fuente */
+    color: #007BFF; /* Color azul */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    display: inline-flex; /* Alinea el ícono y el texto horizontalmente */
+    align-items: center; /* Centra verticalmente el ícono con el texto */
+    gap: 5px; /* Espacio entre el ícono y el texto */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.back-to-home a:hover {
+    color: #0056b3; /* Azul más oscuro al pasar el mouse */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
 }

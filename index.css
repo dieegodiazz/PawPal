@@ -5,7 +5,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    /*
+    
     overflow-x: hidden; /* Esto elimina el scroll horizontal 
     overflow-y: hidden; /* Esto elimina el scroll vertical  */
 }
@@ -36,7 +36,7 @@ body {
 }
 
 .nav-link:hover {
-    background: #F5F5F5;
+    background: #FFC107;
     color: #212529;
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -54,9 +54,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* Asegura que la imagen cubra todo el contenedor */
+    width: 100vw; /* Usa el ancho del viewport */
+    height: 100vh; /* Usa la altura del viewport */
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
 }
 
 /* Overlay para texto encima de la imagen */
@@ -88,11 +88,31 @@ body {
     margin-bottom: 10px; /* Reduces the margin to move it up */
 }
 
+/* Botón de Iniciar Sesión */
+.btn-iniciar-sesion {
+    font-family: 'Montserrat', sans-serif; /* Misma fuente que el resto de los botones */
+    font-size: 16px; /* Tamaño de fuente consistente */
+    font-weight: bold; /* Texto en negrita */
+    padding: 8px 12px; /* Espaciado interno */
+    background-color: #D38D10;
+    color: black; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-block; /* Asegura que se comporte como un botón */
+}
+
+.btn-iniciar-sesion:hover {
+    background-color: #FFC107; /* Azul más oscuro al pasar el mouse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
 /* Botón de Registro */
 .btn-registro {
     margin-top: 10px; 
     padding: 15px 30px;
-    background-color: #F5DEB3;
+    background-color: #D38D10;
     color: black;
     text-decoration: none;
     font-size: 22px;
@@ -102,7 +122,7 @@ body {
 }
 
 .btn-registro:hover {
-    background: #F5F5F5;
+    background: #FFC107;
     color: #212529;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transform: scale(1.05);

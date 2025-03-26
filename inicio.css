@@ -177,3 +177,25 @@ h1 {
     height: 150px; /* Aumenta la altura del nombre */
     width: auto; /* Mantiene la proporción de la imagen */
 }
+
+/* Enlace para volver a la pantalla principal */
+.back-to-home {
+    margin-top: 20px; /* Espacio entre el contenedor principal y el enlace */
+    text-align: center; /* Centra el texto */
+}
+
+.back-to-home a {
+    font-size: 14px; /* Tamaño de fuente */
+    color: #007BFF; /* Color azul */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold; /* Texto en negrita */
+    display: inline-flex; /* Alinea el ícono y el texto horizontalmente */
+    align-items: center; /* Centra verticalmente el ícono con el texto */
+    gap: 5px; /* Espacio entre el ícono y el texto */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+.back-to-home a:hover {
+    color: #0056b3; /* Azul más oscuro al pasar el mouse */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
