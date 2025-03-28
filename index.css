@@ -5,48 +5,62 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    
-    overflow-x: hidden; /* Esto elimina el scroll horizontal 
-    overflow-y: hidden; /* Esto elimina el scroll vertical  */
+    overflow-x: hidden; /* Elimina el scroll horizontal */
 }
 
 /* Estilos para la navegación */
 .nav {
     display: flex;
-    justify-content: flex-end; /* Alineado a la derecha */
+    align-items: center;
+    justify-content: flex-end;
     list-style: none;
-    background-color: #F5DEB3;
-    /*background-color: #DFCBC0;*/
-    padding: 10px;
+    background-color: #D9DBDC;
+    padding: 10px 20px;
     margin: 0;
+    position: relative; /* Asegura que el navbar no se desplace */
+    z-index: 10; /* Coloca el navbar por encima de otros elementos */
 }
 
-.nav-item {
-    margin-left: 15px; /* Espacio entre elementos */
-}
-
+/* Estilo para los enlaces del navbar */
 .nav-link {
-    text-decoration: none;
-    color: #212529;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    text-decoration: none; /* Sin subrayado */
+    color: #6C757D; /* Gris oscuro, más oscuro que el fondo del navbar */
+    font-weight: bold; /* Texto en negrita */
+    font-style: normal; /* Asegura que el texto no esté en cursiva */
     font-family: 'Montserrat', sans-serif;
+    padding: 8px 12px; /* Espaciado interno */
+    transition: color 0.3s ease; /* Transición suave para el color */
 }
 
+/* Hover para los enlaces del navbar */
 .nav-link:hover {
-    background: #FFC107;
-    color: #212529;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #000000; /* Negro al pasar el mouse */
+}
+
+/* Subrayado animado */
+.nav-link::after {
+    content: ''; /* Pseudo-elemento vacío */
+    position: absolute;
+    bottom: 0; /* Posicionado en la parte inferior del enlace */
+    left: 0; /* Empieza desde la izquierda */
+    width: 0; /* Ancho inicial */
+    height: 2px; /* Altura de la barra */
+    background-color: #000000; /* Negro para la barra */
+    transition: width 0.3s ease; /* Transición para la animación */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* La barra se expande completamente al pasar el mouse */
 }
 
 /* Contenedor principal */
 .container {
     position: relative;
-    width: 100%; 
+    width: 100%;
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 /* Imagen como elemento dentro del contenedor */
@@ -54,9 +68,10 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; /* Usa el ancho del viewport */
-    height: 100vh; /* Usa la altura del viewport */
-    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Coloca la imagen detrás del contenido */
 }
 
 /* Overlay para texto encima de la imagen */
@@ -69,7 +84,7 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
+    justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
@@ -85,35 +100,16 @@ body {
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     animation: fadeIn 2s ease;
-    margin-bottom: 10px; /* Reduces the margin to move it up */
-}
-
-/* Botón de Iniciar Sesión */
-.btn-iniciar-sesion {
-    font-family: 'Montserrat', sans-serif; /* Misma fuente que el resto de los botones */
-    font-size: 16px; /* Tamaño de fuente consistente */
-    font-weight: bold; /* Texto en negrita */
-    padding: 8px 12px; /* Espaciado interno */
-    background-color: #D38D10;
-    color: black; /* Texto blanco */
-    text-decoration: none; /* Sin subrayado */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    display: inline-block; /* Asegura que se comporte como un botón */
-}
-
-.btn-iniciar-sesion:hover {
-    background-color: #FFC107; /* Azul más oscuro al pasar el mouse */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra al pasar el mouse */
-    transform: scale(1.05); /* Efecto de zoom */
+    margin-bottom: 10px;
 }
 
 /* Botón de Registro */
 .btn-registro {
-    margin-top: 10px; 
+    margin-top: 10px;
     padding: 15px 30px;
-    background-color: #D38D10;
+    background-color: #66B2FF;
     color: black;
+    font-style: normal;
     text-decoration: none;
     font-size: 22px;
     font-family: 'Poppins', sans-serif;
@@ -122,7 +118,7 @@ body {
 }
 
 .btn-registro:hover {
-    background: #FFC107;
+    background: #3399FF;
     color: #212529;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transform: scale(1.05);
@@ -140,65 +136,98 @@ body {
     }
 }
 
+/* Estilo llamativo para el título principal */
+.h1 {
+    font-size: 40px; /* Tamaño más grande para destacar */
+    font-weight: 900; /* Máximo grosor para mayor impacto */
+    color: #0056B3; /* Azul oscuro, alineado con el diseño */
+    font-family: 'Montserrat', sans-serif; /* Fuente profesional y moderna */
+    margin-top: 30px; /* Espaciado superior */
+    margin-bottom: 20px; /* Espaciado inferior */
+    text-align: left; /* Mantiene la alineación a la izquierda */
+    line-height: 1.2; /* Ajusta el espaciado entre líneas */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para hacerlo más llamativo */
+}
+
+/* Estilo más llamativo para los títulos h2 */
+.h2 {
+    font-size: 32px; /* Tamaño más grande para destacar */
+    font-weight: 900; /* Grosor máximo para mayor impacto */
+    color: #003366; /* Azul más oscuro para mayor contraste */
+    font-family: 'Montserrat', sans-serif; /* Fuente profesional y moderna */
+    margin-top: 30px; /* Espaciado superior */
+    margin-bottom: 20px; /* Espaciado inferior */
+    text-align: left; /* Alineado a la izquierda */
+    line-height: 1.3; /* Ajusta el espaciado entre líneas */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para hacerlo más llamativo */
+    letter-spacing: 1px; /* Espaciado entre letras para mayor claridad */
+}
+
 /* Contenedor de información */
 .info-container {
-    background-color: #F5DEB3;
-    padding: 50px;
-    text-align: center;
+    background-color: #F5F5F5;
+    padding: 30px; /* Espaciado interno igual a la izquierda y derecha */
+    margin: 0; /* Elimina el margen externo */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    border-radius: 0; /* Elimina los bordes redondeados */
+    box-shadow: none; /* Elimina la sombra */
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    color: #6C757D;
+    text-align: left;
+    line-height: 1.6;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
+/* Títulos dentro del contenedor */
 .info-container h2 {
-    color: #D38D10;
-    font-size: 30px;
-}
-
-.info-container p {
-    color: #333;
-    font-size: 20px;
-    max-width: 800px;
-    margin: auto;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.feature {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Reducir el espacio entre la imagen y el texto */
-}
-
-.feature img {
-    width: 70px; /* Aumentar el tamaño de las imágenes */
-}
-
-.feature p {
-    font-size: 18px; /* Aumentar el tamaño del texto */
-    margin: 0; /* Eliminar el margen por defecto del párrafo */
-    font-family: 'Montserrat', sans-serif; /* Cambiar la fuente si lo deseas */
-    font-weight: 500; /* Ajustar el grosor de la fuente */
-}
-
-/* Contacto */
-.contacto {
-    text-align: center;
-    background-color: #d7d8c3;
-    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
     margin-top: 20px;
-    font-family: 'Lora', serif;
+    color: #007BFF;
 }
 
-.contacto a {
-    color: #0000EE;
+/* Párrafos dentro del contenedor */
+.info-container p {
+    margin-bottom: 15px;
+}
+
+/* Lista dentro del contenedor */
+.info-container ul {
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.info-container li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Footer */
+.footer {
+    background-color: #D9DBDC;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    color: black;
     text-decoration: none;
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    transition: color 0.3s ease;
 }
 
-.contacto a:hover {
-    text-decoration: underline;
+.social-link:hover {
+    color: #007BFF;
 }
