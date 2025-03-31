@@ -1,176 +1,236 @@
-/* Estilos generales */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
+
+.nav {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos dentro de la barra */
+    justify-content: space-between; /* Espaciado entre el logotipo y los enlaces */
+    list-style: none;
+    background-color: #D9DBDC; /* Fondo gris claro */
+    padding: 10px 20px; /* Ajusta el espaciado interno */
+    margin: 0;
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0;
+    width: 100%;
+    height: 100px; /* Ajusta la altura de la barra */
+    z-index: 10; /* Asegura que la barra esté por encima de otros elementos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para un efecto flotante */
+}
+
+/* Ajusta las imágenes dentro de la barra */
+.nav img {
+    height: 60px; /* Ajusta la altura de las imágenes */
+    width: auto; /* Mantiene la proporción de las imágenes */
+    max-height: 100%; /* Asegura que las imágenes no excedan la altura de la barra */
+}
+
+/* Estilo para los enlaces del navbar */
+.nav-link {
+    position: relative;
+    text-decoration: none; /* Sin subrayado */
+    color: #6C757D; /* Gris oscuro, más oscuro que el fondo del navbar */
+    font-weight: bold; /* Texto en negrita */
+    font-style: normal; /* Asegura que el texto no esté en cursiva */
+    font-family: "Poppins", sans-serif;
+    padding: 8px 12px; /* Espaciado interno */
+    transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+/* Hover para los enlaces del navbar */
+.nav-link:hover {
+    color: #000000; /* Negro al pasar el mouse */
+}
+
+/* Subrayado animado */
+.nav-link::after {
+    content: ''; /* Pseudo-elemento vacío */
+    position: absolute;
+    bottom: 0; /* Posicionado en la parte inferior del enlace */
+    left: 0; /* Empieza desde la izquierda */
+    width: 0; /* Ancho inicial */
+    height: 2px; /* Altura de la barra */
+    background-color: #000000; /* Negro para la barra */
+    transition: width 0.3s ease; /* Transición para la animación */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* La barra se expande completamente al pasar el mouse */
+}
+
+/* Aplica la fuente Poppins a todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; /* Establece Poppins como fuente predeterminada */
+}
+
+/* Estilo para el body */
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-section {
+    background: #B0C4D8;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #F5DEB3; /* Fondo claro */
-    font-family: Arial, sans-serif;
-    color: #000;
-}
-
-/* Animación para el contenedor principal */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px); /* Inicia ligeramente desplazado hacia abajo */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0); /* Termina en su posición original */
-    }
-}
-
-/* Animación para los elementos internos */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Contenedor principal */
-.login-container {
-    width: 400px; /* Ajusta el ancho del contenedor */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff; /* Fondo blanco */
     text-align: center;
-    animation: fadeInUp 0.8s ease-out; /* Aplica la animación al contenedor */
+    padding: 40px;
 }
-
-/* Logo */
-.logo img {
-    max-width: 150px; /* Aumenta el tamaño máximo de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin-bottom: 20px; /* Espacio entre la imagen y el formulario */
-    animation: fadeIn 1s ease-out;
-    animation-delay: 0.2s;
-    animation-fill-mode: backwards;
+.left-section img {
+    width: 60%;
+    max-width: 300px;
+    margin-top: 20px;
 }
-
-/* Título */
-.login-container h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    animation: fadeIn 1s ease-out;
-    animation-delay: 0.4s;
-    animation-fill-mode: backwards;
-}
-
-/* Formulario */
-.login-form {
+.right-section {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    text-align: left; /* Asegura que todos los elementos dentro estén alineados a la izquierda */
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: white;
+    box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+}
+/* Estilo para el texto de registro */
+.right-section p {
+    margin-top: 20px; /* Agrega espacio superior */
+    text-align: center; /* Centra el texto */
+    font-size: 14px; /* Tamaño de fuente */
+    color: #6C757D; /* Color gris oscuro */
+    font-family: 'Montserrat', sans-serif; /* Fuente consistente con el diseño */
 }
 
-.login-form label,
-.login-form input,
-.login-form button {
-    animation: fadeIn 1s ease-out;
-    animation-delay: 0.6s; /* Retraso para que los elementos aparezcan después del contenedor */
-    animation-fill-mode: backwards; /* Asegura que los elementos estén ocultos antes de la animación */
-}
-
-/* Labels */
-.login-form label {
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-/* Inputs */
-.login-form input {
+.login-btn {
+    background: #B0C4D8;
+    color: black;
+    border: none;
     padding: 10px;
-    border: 1px solid #ccc; /* Borde claro */
-    border-radius: 5px; /* Bordes redondeados */
-    font-size: 14px;
-    width: 100%;
-    background-color: #fff; /* Fondo blanco */
-    color: #333; /* Texto oscuro */
-    outline: none;
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Transición suave para el efecto */
 }
 
-/* Botón de inicio de sesión */
-.login-form button {
-    padding: 12px;
-    background-color: #007BFF;
+/* Efecto al pasar el mouse */
+.login-btn:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+.google-btn {
+    background: #4285F4;
     color: white;
     border: none;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
-
-.login-form button:hover {
-    background-color: #0056b3;
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
 }
-
-/* Enlace de "Olvidaste tu contraseña" */
-.forgot-password {
+.divider::before, .divider::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+}
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+}
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-btn {
+    background: #B0C4D8;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.links {
     font-size: 14px; /* Tamaño de fuente */
     color: #007BFF; /* Mismo tono de azul que el resto de los enlaces */
     text-decoration: none; /* Sin subrayado */
-    font-weight: bold; /* Texto en negrita */
     transition: color 0.3s ease; /* Transición suave para el color */
+    margin-bottom: 10px; /* Espacio inferior */
+    text-align: right; /* Alinear a la derecha */
 }
 
-.forgot-password:hover {
+.links:hover {
     color: #0056b3; /* Azul más oscuro al pasar el mouse */
     text-decoration: underline; /* Subrayado al pasar el mouse */
 }
 
-/* Mensaje de registro */
-.register-message {
-    margin-top: 20px; /* Espacio superior para separarlo del formulario */
-    font-size: 14px; /* Tamaño de fuente */
-    color: #333; /* Color del texto */
-    animation: fadeIn 1s ease-out;
-    animation-delay: 0.8s;
-    animation-fill-mode: backwards;
+/* Contenedor de botones sociales */
+.social-buttons {
+    display: flex;
+    flex-direction: column; /* Alinea el texto y los botones en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    margin-top: -25px; /* Reduce aún más el margen superior para subir el contenido */
 }
 
-.register-message a {
-    color: #007BFF; /* Color del enlace */
-    text-decoration: none; /* Sin subrayado */
-    font-weight: bold; /* Texto en negrita */
-}
-
-.register-message a:hover {
-    color: #0056b3;
-    text-decoration: underline; /* Subrayado al pasar el mouse */
-}
-
-/* Enlace para volver a la pantalla principal */
-.back-to-home {
-    margin-top: 20px; /* Espacio entre el contenedor principal y el enlace */
+/* Estilo para el texto encima de los botones sociales */
+.social-text {
+    font-size: 16px; /* Tamaño de fuente */
+    color: #6C757D; /* Color gris oscuro */
     text-align: center; /* Centra el texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+    font-family: 'Montserrat', sans-serif; /* Fuente consistente con el diseño */
 }
 
-.back-to-home a {
-    font-size: 14px; /* Tamaño de fuente */
-    color: #007BFF; /* Color azul */
-    text-decoration: none; /* Sin subrayado */
-    font-weight: bold; /* Texto en negrita */
-    display: inline-flex; /* Alinea el ícono y el texto horizontalmente */
-    align-items: center; /* Centra verticalmente el ícono con el texto */
-    gap: 5px; /* Espacio entre el ícono y el texto */
-    transition: color 0.3s ease; /* Transición suave para el color */
+/* Contenedor para los iconos sociales */
+.social-icons {
+    display: flex; /* Alinea los botones en una fila */
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 15px; /* Espaciado entre los botones */
 }
 
-.back-to-home a:hover {
-    color: #0056b3; /* Azul más oscuro al pasar el mouse */
-    text-decoration: underline; /* Subrayado al pasar el mouse */
+/* Estilo general para los botones sociales */
+.social-btn {
+    border: none; /* Sin borde */
+    background: none; /* Sin fondo */
+    padding: 0; /* Sin padding */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: transform 0.3s ease; /* Efecto de hover */
+}
+
+/* Efecto al pasar el mouse */
+.social-btn:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+/* Estilo para los íconos */
+.social-btn img {
+    width: 50px; /* Tamaño del ícono */
+    height: 50px;
+    border-radius: 50%; /* Hace que la imagen sea redonda */
 }
