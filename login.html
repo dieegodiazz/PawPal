@@ -10,7 +10,7 @@
     <ul class="nav">
         <li class="nav-item" style="margin-right: auto; display: flex; align-items: center;">
             <img src="imagenes/LogoSinFondo.png" alt="PawPal Logo" style="height: 90px; margin-right: 10px; margin-top: 8px;">
-            <img src="imagenes/NombreSinFondo.png" alt="PawPal Nombre" style="height: 200px;" style="width: 100px; margin-top: 5000px;">
+            <img src="imagenes/NombreSinFondo.png" alt="PawPal Nombre" style="height: 200px; width: auto;">
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="index.html">Inicio</a>
@@ -26,21 +26,26 @@
         </li>
     </ul>
 
-    <div class="container">
+    <div class="container fade-in">
         <div class="left-section">
-            <h2>Descubre los mejores Diseñadores & Creativos.</h2>
-            <img src="illustration.png" alt="Ilustración creativa">
-            <p>Arte por <a href="#">Irina Valeeva</a></p>
+            <div class="image-carousel">
+                <img src="imagenes/carrousel1.jpg" alt="Mascota 1" class="carousel-image active">
+                <img src="imagenes/carrousel2.jpg" alt="Mascota 2" class="carousel-image">
+                <img src="imagenes/carrousel3.jpg" alt="Mascota 3" class="carousel-image">
+                <img src="imagenes/carrousel4.jpg" alt="Mascota 4" class="carousel-image">
+                <img src="imagenes/carrousel5.jpg" alt="Mascota 5" class="carousel-image">
+                <img src="imagenes/carrousel6.jpg" alt="Mascota 6" class="carousel-image">
+                <img src="imagenes/carrousel7.jpg" alt="Mascota 7" class="carousel-image">
+            </div>
         </div>
+
         <div class="right-section">
-            <h2>Inicia sesión en Dribbble</h2>
+            <h2>Inicia sesión en PawPal</h2>
             <form>
-                <input type="text" id="email" placeholder="Correo electrónico">
-                
-                <input type="password" id="password" placeholder="Contraseña">
+                <input type="text" id="email" placeholder="Correo electrónico" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
                 <a href="#" class="links">¿Olvidaste tu contraseña?</a>
-                
-                <button type="button" class="login-btn" onclick="window.location.href='inicio.html'">Iniciar sesión</button>    
+                <button type="button" class="login-btn" onclick="window.location.href='inicio.html'">Iniciar sesión</button>
             </form>
             <div class="divider">o</div>
             <div class="social-buttons">
@@ -60,7 +65,9 @@
                     </button>
                 </div>
             </div>
-            <p>¿No tienes una cuenta? <a href="#" class="links">Regístrate ahora</a></p>
+            <p>¿No tienes una cuenta? 
+                <a href="#" class="links" onclick="redirectToRegister()">Regístrate</a>
+            </p>       
         </div>
     </div>
 
