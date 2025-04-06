@@ -56,3 +56,19 @@ function redirectToLogin() {
         window.location.href = 'login.html'; // Redirige a la página de inicio de sesión
     }, 700); // El tiempo debe coincidir con la duración de la animación (0.7s)
 }
+
+function redirectToFacebook() {
+    window.location.href = 'https://www.facebook.com/'; 
+}
+
+function redirectToInstagram() {
+    window.location.href = 'https://www.instagram.com/'; 
+}   
+
+function redirectToTwitter() {
+    window.location.href = 'https://twitter.com/'; 
+}
+
+function redirectToGoogle() {
+    window.location.href = 'https://accounts.google.com/signin'; 
+}

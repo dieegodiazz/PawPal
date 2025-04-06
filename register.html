@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <ul class="nav">
+    <ul class="nav" style="display: flex; align-items: center; padding: 15px; height: 100px;">
         <li class="nav-item" style="margin-right: auto; display: flex; align-items: center;">
-            <img src="imagenes/LogoSinFondo.png" alt="PawPal Logo" style="height: 90px; margin-right: 10px; margin-top: 8px;">
-            <img src="imagenes/NombreSinFondo.png" alt="PawPal Nombre" style="height: 200px; width: auto;">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="imagenes/LogoSinFondo.png" alt="PawPal Logo" class="logo" />
+                <img src="imagenes/NombreSinFondo.png" alt="PawPal Nombre" class="nombre" />
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="index.html">Inicio</a>
@@ -27,18 +29,7 @@
     </ul>
 
     <div class="container fade-in">
-        <div class="left-section">
-            <div class="image-carousel">
-                <img src="imagenes/carrousel1.jpg" alt="Mascota 1" class="carousel-image active">
-                <img src="imagenes/carrousel2.jpg" alt="Mascota 2" class="carousel-image">
-                <img src="imagenes/carrousel3.jpg" alt="Mascota 3" class="carousel-image">
-                <img src="imagenes/carrousel4.jpg" alt="Mascota 4" class="carousel-image">
-                <img src="imagenes/carrousel5.jpg" alt="Mascota 5" class="carousel-image">
-                <img src="imagenes/carrousel6.jpg" alt="Mascota 6" class="carousel-image">
-                <img src="imagenes/carrousel7.jpg" alt="Mascota 7" class="carousel-image">
-            </div>
-        </div>
-        <div class="right-section registro">
+        <div class="left-section registro">
             <h2>Completa tu registro</h2>
             <form>
                 <input type="text" id="nombre" placeholder="Nombre" required>
@@ -47,12 +38,27 @@
                 <input type="password" id="password" placeholder="Contraseña" required>
                 <input type="text" id="domicilio" placeholder="Domicilio" required>
                 <input type="tel" id="telefono" placeholder="Número de teléfono" required>
+                
+                <div class="checkbox-container">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">Al registrarte, aceptas nuestras <a href="#">políticas de privacidad</a> y <a href="#">términos de uso</a>.</label>
+                </div>
+                
                 <button type="submit" class="login-btn">Registrarse</button>
             </form>
             <p>¿Ya tienes una cuenta? 
                 <a href="#" class="links" onclick="redirectToLogin()">Inicia sesión aquí</a>
             </p>
         </div>
+        <div class="right-section registro">
+            <div class="image-carousel">
+                <img src="imagenes/carrousel8.jpg" alt="Mascota 8" class="carousel-image active">
+                <img src="imagenes/carrousel9.jpg" alt="Mascota 9" class="carousel-image">
+                <img src="imagenes/carrousel10.jpg" alt="Mascota 10" class="carousel-image">
+                <img src="imagenes/carrousel11.jpg" alt="Mascota 11" class="carousel-image">
+            </div>
+        </div>
+    </div>
     </div>
 
     <script src="login.js"></script>

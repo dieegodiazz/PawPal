@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
 
+.logo {
+    height: 90px; /* Altura del logotipo */
+    margin-right: 10px; /* Espaciado entre el logotipo y el nombre */
+    margin-top: 8px; /* Ajusta la posición vertical */
+}
+
+.nombre {
+    height: 200px; /* Altura del nombre */
+    width: auto; /* Mantiene la proporción de la imagen */
+}
+
 .nav {
     display: flex;
     align-items: center; /* Centra verticalmente los elementos dentro de la barra */
@@ -14,13 +25,6 @@
     height: 100px; /* Ajusta la altura de la barra */
     z-index: 10; /* Asegura que la barra esté por encima de otros elementos */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para un efecto flotante */
-}
-
-/* Ajusta las imágenes dentro de la barra */
-.nav img {
-    height: 60px; /* Ajusta la altura de las imágenes */
-    width: auto; /* Mantiene la proporción de las imágenes */
-    max-height: 100%; /* Asegura que las imágenes no excedan la altura de la barra */
 }
 
 /* Estilo para los enlaces del navbar */
@@ -220,6 +224,7 @@ input {
     cursor: pointer;
 }
 .links {
+    font-family: "Poppins", sans-serif; /* Fuente consistente con el diseño */  
     font-size: 14px; /* Tamaño de fuente */
     color: #007BFF; /* Mismo tono de azul que el resto de los enlaces */
     text-decoration: none; /* Sin subrayado */
@@ -294,8 +299,84 @@ input {
     }
 }
 
-/* Estilo específico para la right-section de la página de registro */
+.left-section.registro {
+    background: white; /* Fondo blanco para el formulario */
+    width: 50vw; /* Ocupa el 50% del contenedor */
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
+    justify-content: flex-start; /* Alinea el contenido al inicio */
+    align-items: center; /* Centra horizontalmente el contenido */
+    padding: 150px 40px; /* Incrementa el espaciado superior a 100px */
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); /* Sombra para separar visualmente */
+    height: 100vh; /* Asegura que ocupe toda la altura */
+}
+
+.left-section.registro p {
+    font-size: 14px; /* Ajusta el tamaño del texto para que coincida con el resto */
+    color: #6C757D; /* Color gris oscuro para consistencia */
+    font-family: "Poppins", sans-serif; /* Asegura que use la fuente Poppins */
+    text-align: center; /* Centra el texto */
+    margin-top: 20px; /* Espaciado superior para separarlo del botón */
+}
+
+/* Estilo específico para la right-section en la página de registro */
 .right-section.registro {
-    margin-top: 100px; /* Mueve la sección un poco más abajo */
-    justify-content: flex-start; /* Alinea el contenido al inicio si es necesario */
+    background: #B0C4D8; /* Fondo para las imágenes */
+    width: 50vw; /* Ocupa el 50% del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que ocupe toda la altura */
+    overflow: hidden; /* Oculta contenido desbordado */
+    padding: 0; /* Elimina el espaciado interno */
+}
+
+.right-section.registro .image-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.right-section.registro .carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Oculta las imágenes por defecto */
+    transition: opacity 0.5s ease; /* Transición suave al cambiar de imagen */
+}
+
+.right-section.registro .carousel-image.active {
+    opacity: 1; /* Muestra la imagen activa */
+    z-index: 1; /* Asegura que la imagen activa esté al frente */
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px; /* Espaciado superior */
+    font-size: 14px; /* Tamaño del texto */
+    color: #6C757D; /* Color gris oscuro */
+    font-family: "Poppins", sans-serif; /* Fuente consistente con el diseño */
+    text-align: justify;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px; /* Espaciado entre la casilla y el texto */
+    width: 16px;
+    height: 16px;
+    cursor: pointer; /* Cambia el cursor al pasar sobre la casilla */
+}
+
+.checkbox-container a {
+    color: #007bff; /* Color azul para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.checkbox-container a:hover {
+    color: #0056b3;
+    text-decoration: underline; /* Subrayado al pasar el cursor */
 }

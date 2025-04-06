@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +14,17 @@ body {
     flex-direction: column;
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
+}
+
+.logo {
+    height: 90px; /* Altura del logotipo */
+    margin-right: 10px; /* Espaciado entre el logotipo y el nombre */
+    margin-top: 8px; /* Ajusta la posición vertical */
+}
+
+.nombre {
+    height: 200px; /* Altura del nombre */
+    width: auto; /* Mantiene la proporción de la imagen */
 }
 
 /* Estilos para la navegación */
@@ -103,8 +115,7 @@ body {
 .intro {
     font-size: 38px;
     margin: 0 20px;
-    font-family: 'Playfair Display', serif;
-    font-weight: bold;
+    font-family: 'Poppins', serif;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     animation: fadeIn 2s ease;
@@ -144,12 +155,56 @@ body {
     }
 }
 
+.show-more {
+    display: inline-block; /* Asegura que el enlace se comporte como un botón */
+    font-size: 18px; /* Tamaño del texto */
+    font-family: 'Poppins', sans-serif; /* Fuente consistente */
+    color: #66B2FF; /* Color del texto */
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: color 0.3s ease; /* Transición suave para el color */
+    position: absolute; /* Posiciona el enlace dentro de la fotografía */
+    bottom: 120px; /* Ajusta la distancia desde la parte inferior */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centrado horizontal */
+    text-align: center; /* Centra el texto y las flechas */
+}
+
+.show-more::after {
+    content: ''; /* Pseudo-elemento vacío */
+    display: block; /* Hace que el pseudo-elemento sea visible */
+    width: 0; /* Ancho inicial del subrayado */
+    height: 2px; /* Altura de la línea */
+    background-color: #66B2FF; /* Color del subrayado */
+    margin: 5px auto 0; /* Espaciado entre el texto y la línea */
+    transition: width 0.3s ease; /* Transición suave para el ancho */
+}
+
+.show-more:hover::after {
+    width: 100%; /* Expande el subrayado al ancho completo del texto */
+}
+
+.show-more:hover .arrow {
+    transform: scale(1.2); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+.show-more:hover {
+    color: #3399FF; /* Cambia el color al pasar el mouse */
+}
+
+.show-more .arrow {
+    font-size: 24px; /* Tamaño del símbolo */
+    margin-top: 0; /* Reduce el espacio entre el texto y las flechas */
+    color: inherit; /* Hereda el color del enlace */
+    transition: transform 0.3s ease; /* Transición suave para animaciones */
+}
+
 /* Estilo llamativo para el título principal */
 .h1 {
     font-size: 40px; /* Tamaño más grande para destacar */
     font-weight: 900; /* Máximo grosor para mayor impacto */
     color: #0056B3; /* Azul oscuro, alineado con el diseño */
-    font-family: 'Montserrat', sans-serif; /* Fuente profesional y moderna */
+    font-family: 'Poppins', sans-serif; /* Fuente profesional y moderna */
     margin-top: 30px; /* Espaciado superior */
     margin-bottom: 20px; /* Espaciado inferior */
     text-align: left; /* Mantiene la alineación a la izquierda */
@@ -162,7 +217,7 @@ body {
     font-size: 32px; /* Tamaño más grande para destacar */
     font-weight: 900; /* Grosor máximo para mayor impacto */
     color: #003366; /* Azul más oscuro para mayor contraste */
-    font-family: 'Montserrat', sans-serif; /* Fuente profesional y moderna */
+    font-family: 'Poppins', sans-serif; /* Fuente profesional y moderna */
     margin-top: 30px; /* Espaciado superior */
     margin-bottom: 20px; /* Espaciado inferior */
     text-align: left; /* Alineado a la izquierda */
@@ -179,7 +234,7 @@ body {
     width: 100%; /* Ocupa todo el ancho de la pantalla */
     border-radius: 0; /* Elimina los bordes redondeados */
     box-shadow: none; /* Elimina la sombra */
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     color: #6C757D;
     text-align: left;
@@ -214,7 +269,7 @@ body {
 /* Footer */
 .footer {
     background-color: #D9DBDC;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     color: black;
     padding: 10px;

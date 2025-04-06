@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const profilesContainer = document.querySelector('.profiles');
-    const adminButton = document.querySelector('.admin-button');
+    const adminButton = document.querySelector('.admin-btn');
     let isAdminMode = false; // Estado para saber si estamos en modo administración
 
     // Obtener los perfiles del localStorage

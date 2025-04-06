@@ -14,8 +14,10 @@
 
     <ul class="nav" style="display: flex; align-items: center; padding: 15px; height: 100px;">
         <li class="nav-item" style="margin-right: auto; display: flex; align-items: center;">
-            <img src="imagenes/LogoSinFondo.png" alt="PawPal Logo" style="height: 90px; margin-right: 10px; margin-top: 8px;">
-            <img src="imagenes/NombreSinFondo.png" alt="PawPal Nombre" style="height: 200px;" style="width: 100px; margin-top: 5000px;">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="imagenes/LogoSinFondo.png" alt="PawPal Logo" class="logo" />
+                <img src="imagenes/NombreSinFondo.png" alt="PawPal Nombre" class="nombre" />
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="index.html">Inicio</a>
@@ -36,10 +38,13 @@
         <div class="overlay">
             <p class="intro">¡Bienvenido a tu comunidad de mascotas!<br>Únete y disfruta del cuidado fácil y divertido para tus peludos.</p>
             <a href="register.html" class="btn-registro">¡Regístrate Ahora!</a>
+            <a href="#info-container" class="show-more">
+                Mostrar más <span class="arrow">↓</span>
+            </a>
         </div>
     </div>
 
-    <div class="info-container">
+    <div id="info-container" class="info-container">
         <h1 class="h1">¡Bienvenido a PawPal! La app que cuida a tu mascota en todo momento</h1>        
         <p>¿Alguna vez has deseado estar siempre conectado con tu mascota, conocer su bienestar y asegurarte de que tiene todo lo que necesita? ¡Presentamos PawPal, la aplicación inteligente que transforma la forma en que cuidas a tu mejor amigo peludo!</p>
         
