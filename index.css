@@ -1,296 +1,192 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: "Poppins", sans-serif;
-    overflow-x: hidden;
-}
-
-.logo {
-    height: 90px; /* Altura del logotipo */
-    margin-right: 10px; /* Espaciado entre el logotipo y el nombre */
-    margin-top: 8px; /* Ajusta la posición vertical */
-}
-
-.nombre {
-    height: 200px; /* Altura del nombre */
-    width: auto; /* Mantiene la proporción de la imagen */
-}
-
-/* Estilos para la navegación */
-.nav {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    list-style: none;
-    background-color: #D9DBDC;
-    height: fit-content;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    max-width: 430px;
+    margin: auto;
+  }
+  
+  .navbar {
+    background-color: #ebebeb;
     padding: 10px 20px;
-    margin: 0;
-    position: relative; /* Asegura que el navbar no se desplace */
-    z-index: 10; /* Coloca el navbar por encima de otros elementos */
-}
-
-/* Estilo para los enlaces del navbar */
-.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 90px;
+    font-family: 'Poppins', sans-serif;
     position: relative;
-    text-decoration: none; /* Sin subrayado */
-    color: #6C757D; /* Gris oscuro, más oscuro que el fondo del navbar */
-    font-weight: bold; /* Texto en negrita */
-    font-style: normal; /* Asegura que el texto no esté en cursiva */
-    font-family: "Poppins", sans-serif;
-    padding: 8px 12px; /* Espaciado interno */
-    transition: color 0.3s ease; /* Transición suave para el color */
-}
-
-/* Hover para los enlaces del navbar */
-.nav-link:hover {
-    color: #000000; /* Negro al pasar el mouse */
-}
-
-/* Subrayado animado */
-.nav-link::after {
-    content: ''; /* Pseudo-elemento vacío */
-    position: absolute;
-    bottom: 0; /* Posicionado en la parte inferior del enlace */
-    left: 0; /* Empieza desde la izquierda */
-    width: 0; /* Ancho inicial */
-    height: 2px; /* Altura de la barra */
-    background-color: #000000; /* Negro para la barra */
-    transition: width 0.3s ease; /* Transición para la animación */
-}
-
-.nav-link:hover::after {
-    width: 100%; /* La barra se expande completamente al pasar el mouse */
-}
-
-/* Contenedor principal */
-.container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-/* Imagen como elemento dentro del contenedor */
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* Coloca la imagen detrás del contenido */
-}
-
-/* Overlay para texto encima de la imagen */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #333;
+  }
+  
+  .nav-menu {
+    list-style:none;
+    display: none;
+    flex-direction: column;
+    position:absolute;
+    top: 35px;
+    left: 20px;
+    background-color: #dcdcdc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+      width: 150px;
+  }
+  
+  .nav-menu li {
+    margin: 10px 0;
+  }
+  
+  .nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    background-color: #cfcfcf;
+  }
+  
+  .logo1 {
+    height: 90px;
+  }
+  
+  .logo2 {
+    height: 70px;
+  }
+  
+  .menu-icon {
+    font-size: 35px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .hero {
+    background-image: url('imagenes/fondoInicio3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ebebeb;
+    text-align: center;
+    height: calc(100vh - 90px);              
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+    align-items: center;      
     padding: 0 20px;
-}
-
-/* Introducción */
-.intro {
-    font-size: 38px;
-    margin: 0 20px;
-    font-family: 'Poppins', serif;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    animation: fadeIn 2s ease;
-    margin-bottom: 10px;
-}
-
-/* Botón de Registro */
-.btn-registro {
-    margin-top: 10px;
-    padding: 15px 30px;
-    background-color: #66B2FF;
-    color: black;
-    font-style: normal;
-    text-decoration: none;
-    font-size: 22px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 0 0 32px 32px;;
+  }
+  
+  .hero h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ebebeb;
+    text-shadow: 2px 2px 6px rgba(100, 100, 100, 0.4);
+  }
+  
+  .btn-primary {
     font-family: 'Poppins', sans-serif;
+    background-color: #2196f3;
+    padding: 12px 20px;
+    font-size: 24px; 
+    border: none;
+    color: white;
     border-radius: 8px;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.btn-registro:hover {
-    background: #3399FF;
-    color: #212529;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05);
-}
-
-/* Animación de Desvanecimiento */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.show-more {
-    display: inline-block; /* Asegura que el enlace se comporte como un botón */
-    font-size: 18px; /* Tamaño del texto */
-    font-family: 'Poppins', sans-serif; /* Fuente consistente */
-    color: #66B2FF; /* Color del texto */
-    text-decoration: none; /* Elimina el subrayado predeterminado */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    transition: color 0.3s ease; /* Transición suave para el color */
-    position: absolute; /* Posiciona el enlace dentro de la fotografía */
-    bottom: 120px; /* Ajusta la distancia desde la parte inferior */
-    left: 50%; /* Centra horizontalmente */
-    transform: translateX(-50%); /* Ajusta el centrado horizontal */
-    text-align: center; /* Centra el texto y las flechas */
-}
-
-.show-more::after {
-    content: ''; /* Pseudo-elemento vacío */
-    display: block; /* Hace que el pseudo-elemento sea visible */
-    width: 0; /* Ancho inicial del subrayado */
-    height: 2px; /* Altura de la línea */
-    background-color: #66B2FF; /* Color del subrayado */
-    margin: 5px auto 0; /* Espaciado entre el texto y la línea */
-    transition: width 0.3s ease; /* Transición suave para el ancho */
-}
-
-.show-more:hover::after {
-    width: 100%; /* Expande el subrayado al ancho completo del texto */
-}
-
-.show-more:hover .arrow {
-    transform: scale(1.2); /* Aumenta ligeramente el tamaño al pasar el mouse */
-}
-
-.show-more:hover {
-    color: #3399FF; /* Cambia el color al pasar el mouse */
-}
-
-.show-more .arrow {
-    font-size: 24px; /* Tamaño del símbolo */
-    margin-top: 0; /* Reduce el espacio entre el texto y las flechas */
-    color: inherit; /* Hereda el color del enlace */
-    transition: transform 0.3s ease; /* Transición suave para animaciones */
-}
-
-/* Estilo llamativo para el título principal */
-.h1 {
-    font-size: 40px; /* Tamaño más grande para destacar */
-    font-weight: 900; /* Máximo grosor para mayor impacto */
-    color: #0056B3; /* Azul oscuro, alineado con el diseño */
-    font-family: 'Poppins', sans-serif; /* Fuente profesional y moderna */
-    margin-top: 30px; /* Espaciado superior */
-    margin-bottom: 20px; /* Espaciado inferior */
-    text-align: left; /* Mantiene la alineación a la izquierda */
-    line-height: 1.2; /* Ajusta el espaciado entre líneas */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para hacerlo más llamativo */
-}
-
-/* Estilo más llamativo para los títulos h2 */
-.h2 {
-    font-size: 32px; /* Tamaño más grande para destacar */
-    font-weight: 900; /* Grosor máximo para mayor impacto */
-    color: #003366; /* Azul más oscuro para mayor contraste */
-    font-family: 'Poppins', sans-serif; /* Fuente profesional y moderna */
-    margin-top: 30px; /* Espaciado superior */
-    margin-bottom: 20px; /* Espaciado inferior */
-    text-align: left; /* Alineado a la izquierda */
-    line-height: 1.3; /* Ajusta el espaciado entre líneas */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra para hacerlo más llamativo */
-    letter-spacing: 1px; /* Espaciado entre letras para mayor claridad */
-}
-
-/* Contenedor de información */
-.info-container {
-    background-color: #F5F5F5;
-    padding: 30px; /* Espaciado interno igual a la izquierda y derecha */
-    margin: 0; /* Elimina el margen externo */
-    width: 100%; /* Ocupa todo el ancho de la pantalla */
-    border-radius: 0; /* Elimina los bordes redondeados */
-    box-shadow: none; /* Elimina la sombra */
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    color: #6C757D;
-    text-align: left;
-    line-height: 1.6;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-}
-
-/* Títulos dentro del contenedor */
-.info-container h2 {
-    font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
+    cursor: pointer;
     margin-top: 20px;
-    color: #007BFF;
-}
-
-/* Párrafos dentro del contenedor */
-.info-container p {
-    margin-bottom: 15px;
-}
-
-/* Lista dentro del contenedor */
-.info-container ul {
-    margin-left: 20px;
-    padding-left: 20px;
-}
-
-.info-container li {
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-/* Footer */
-.footer {
-    background-color: #D9DBDC;
+  }
+  
+  .btn-secondary {
+    position: absolute;
+    font-size: 25px;
+    bottom: 50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ebebeb;
+    font-weight: 700;
+    text-decoration: none; /* text-decoration: wavy no es válido para valores */
     font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    color: black;
-    padding: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);  
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+  
+  .btn-terciary {
+    display: inline-block;
+    margin: 15px 0;
+    color: #007bff;
+    font-weight: 650;
+    text-decoration: underline;
+    text-decoration-color: #007bff;
+    text-underline-offset: 6px;
     text-align: center;
-    margin-top: 20px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.social-link {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.social-link:hover {
-    color: #007BFF;
-}
+    transition: text-decoration-thickness 0.2s;
+  }
+  
+  .btn-terciary:hover {
+    text-decoration-thickness: 3px;
+  }
+  
+  section {
+    padding: 20px;
+    background-color: white;
+    margin: 10px auto;      
+    border-radius: 12px;
+    width: 85%;
+  }
+  
+  section img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  h2 {
+    color: #222;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  p {
+    font-size: 15px;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  .tag-image {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .foto-image {
+    width: 80%;
+    max-width: 170px;        
+    margin: 0 auto;
+    display: block;
+    transition: width 0.4s, max-width 0.4s;
+  }
+  
+  .pawtrol-image {
+    width: 100%;
+    border-radius: 10px;
+  }

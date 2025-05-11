@@ -5,74 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesión</title>
     <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <ul class="nav" style="display: flex; align-items: center; padding: 15px; height: 100px;">
-        <li class="nav-item" style="margin-right: auto; display: flex; align-items: center;">
-            <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
-                <img src="imagenes/LogoSinFondo.png" alt="PawPal Logo" class="logo" />
-                <img src="imagenes/NombreSinFondo.png" alt="PawPal Nombre" class="nombre" />
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Sobre Nosotros</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Ayuda</a>
-        </li>
-        <li class="nav-item">
-            <a href="login.html" class="nav-link">Iniciar Sesión</a>
-        </li>
-    </ul>
-
-    <div class="container fade-in">
-        <div class="left-section">
-            <div class="image-carousel">
-                <img src="imagenes/carrousel1.jpg" alt="Mascota 1" class="carousel-image active">
-                <img src="imagenes/carrousel2.jpg" alt="Mascota 2" class="carousel-image">
-                <img src="imagenes/carrousel3.jpg" alt="Mascota 3" class="carousel-image">
-                <img src="imagenes/carrousel4.jpg" alt="Mascota 4" class="carousel-image">
-                <img src="imagenes/carrousel5.jpg" alt="Mascota 5" class="carousel-image">
-                <img src="imagenes/carrousel6.jpg" alt="Mascota 6" class="carousel-image">
-                <img src="imagenes/carrousel7.jpg" alt="Mascota 7" class="carousel-image">
-            </div>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu-icon" id="menu-toggle">&#9776;</div>
+            <img src="imagenes/logoSinFondo.png" alt="P Logo" class="logo1" />
+            <img src="imagenes/nombreSinFondo.png" alt="Nombre Logo" class="logo2" />
         </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Sobre Nosotros</a></li>
+            <li><a href="#nosotros">Ayuda</a></li>
+            <li><a href="#contacto">Iniciar sesión</a></li>
+        </ul>
+    </nav>
 
-        <div class="right-section">
-            <h2>Inicia sesión en PawPal</h2>
+    <div class="container">
+        <div class="right-section login">
+            <h2>Iniciar sesión</h2>
             <form>
-                <input type="text" id="email" placeholder="Correo electrónico" required>
+                <input type="email" id="correo" placeholder="Correo electrónico" required>
                 <input type="password" id="password" placeholder="Contraseña" required>
-                <a href="#" class="links">¿Olvidaste tu contraseña?</a>
-                <button type="button" class="login-btn" onclick="window.location.href='inicio.html'">Iniciar sesión</button>
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                <button type="submit" class="login-btn">Iniciar sesión</button>
             </form>
-            <div class="divider">o</div>
-            <div class="social-buttons">
-                <p class="social-text">Inicia sesión con:</p>
-                <div class="social-icons">
-                    <button class="social-btn" onclick="redirectToInstagram()">
-                        <img src="iconos/instagram.png" alt="Instagram" style="width: 55px; height:55px;">
-                    </button>
-                    <button class="social-btn" onclick="redirectToTwitter()">
-                        <img src="iconos/x.png" alt="Twitter" style="width: 50px; height:50px;">
-                    </button>
-                    <button class="social-btn" onclick="redirectToFacebook()">
-                        <img src="iconos/facebook.png" alt="Facebook" style="width: 50px; height:50px;">
-                    </button>
-                    <button class="social-btn" onclick="redirectToGoogle()">
-                        <img src="iconos/google.png" alt="Google" style="width: 47px; height:47px;">
-                    </button>
-                </div>
+            <div class="divider">
+                <span>o</span>
             </div>
-            <p>¿No tienes una cuenta? 
-                <a href="#" class="links" onclick="redirectToRegister()">Regístrate</a>
-            </p>       
+            <div class="google-login">
+                <p>Inicia sesión con:</p>
+                <img src="iconos/google.png" alt="Google Icon" class="google-icon">
+            </div>
+            <p class="register-text">¿No tienes una cuenta? 
+                <a href="register.html" class="links">Regístrate aquí</a>
+            </p>
         </div>
     </div>
 
-    <script src="login.js"></script>
+    <div class="footer-image"></div>
 </body>
 </html>

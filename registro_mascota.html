@@ -6,56 +6,55 @@
     <title>Registro de Mascota</title>
     <link rel="stylesheet" href="registro_mascota.css">
     <script src="registro_mascota.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="login-container">
-        <div class="logo">
-            <img src="imagenes/PawPalNoFondo.png" alt="Logo">
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu-icon" id="menu-toggle">&#9776;</div>
+            <img src="imagenes/logoSinFondo.png" alt="P Logo" class="logo1" />
+            <img src="imagenes/nombreSinFondo.png" alt="Nombre Logo" class="logo2" />
         </div>
-        <h2>Registrar Mascota</h2>
-        <form class="login-form">
-            <div class="form-left">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" placeholder="Escribe el nombre de tu mascota" required>
-            
-                <label for="especie">Especie</label>
-                <input type="text" id="especie" list="especies" placeholder="Selecciona o escribe la especie" required>
-                <datalist id="especies">
-                    <option value="Perro">
-                    <option value="Gato">
-                    <option value="Ave">
-                    <option value="Otro">
-                </datalist>
-            
-                <label for="raza">Raza</label>
-                <input type="text" id="raza" placeholder="Escribe la raza de tu mascota" required>
-            
-                <label for="edad">Edad</label>
-                <input type="number" id="edad" placeholder="Escribe la edad aproximada en años" min="0" required>
-            
-                <label for="sexo">Sexo</label>
-                <input type="text" id="sexo" list="sexos" placeholder="Selecciona o escribe el sexo" required>
-                <datalist id="sexos">
-                    <option value="Macho">
-                    <option value="Hembra">
-                </datalist>
-            </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#miperfil">Mi Perfil</a></li>
+            <li><a href="#cambiarmascota">Cambiar de Mascota</a></li>
+            <li><a href="#configfamilia">Configurar Familia</a></li>
+            <li><a href="#escaneartag">Escanear Tag</a></li>
+            <li><a href="#cerrarsesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
 
-            <div class="form-right">
-                <label for="foto">Foto de la mascota (opcional)</label>
-                <input type="file" id="foto" accept="image/*" class="file-input">
-                <div id="preview-container">
-                    <p class="preview-text">Vista previa:</p>
-                    <img id="preview" src="#" alt="Vista previa de la foto" style="display: none; max-width: 100%; border: 1px solid #ccc; border-radius: 5px;">
-                    <button type="button" id="remove-photo" style="display: none;">Eliminar selección</button>
-                </div>
-            </div>
+    <div class="back-link-container">
+    <a href="menu.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Volver
+    </a>
 
-            <button type="submit">Registrar Mascota</button>
-        </form>
-        <div class="register-container">
-            <a href="inicio.html">Volver a Perfiles</a>
+    <div class="form-container">
+    <h1>Registrar Mascota</h1>
+    <form id="pet-form">
+        <div class="form-group">
+            <input type="text" id="pet-name" name="pet-name" placeholder="Nombre de la Mascota" required>
         </div>
-    </div>
+        <div class="form-group">
+            <input type="text" id="pet-type" name="pet-type" placeholder="Tipo de Mascota" required>
+        </div>
+        <div class="form-group">
+            <input type="text" id="pet-breed" name="pet-breed" placeholder="Raza">
+        </div>
+        <div class="form-group">
+            <input type="number" id="pet-age" name="pet-age" placeholder="Edad en años" min="0">
+        </div>
+        <div class="form-group">
+            <input type="file" id="pet-image" name="pet-image" accept="image/*">
+        </div>
+        <div class="form-group">
+            <img id="image-preview" src="#" alt="Previsualización de la imagen" style="display: none; max-width: 100%; height: auto; border: 1px solid #ccc; margin-top: 10px;">
+        </div>
+        <button type="submit" class="submit-btn">Registrar Mascota</button>
+    </form>
+</div>
+</div>
 </body>
 </html>

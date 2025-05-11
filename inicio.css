@@ -1,213 +1,285 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif; /* Establece Poppins como fuente predeterminada */
-}
-
-.logo {
-    height: 90px; /* Altura del logotipo */
-    margin-right: 10px; /* Espaciado entre el logotipo y el nombre */
-    margin-top: 8px; /* Ajusta la posición vertical */
-}
-
-.nombre {
-    height: 200px; /* Altura del nombre */
-    width: auto; /* Mantiene la proporción de la imagen */
-}
-
-.nav {
-    display: flex;
-    align-items: center; /* Centra verticalmente los elementos dentro de la barra */
-    justify-content: space-between; /* Espaciado entre el logotipo y los enlaces */
-    list-style: none;
-    background-color: #D9DBDC; /* Fondo gris claro */
-    padding: 10px 20px; /* Ajusta el espaciado interno */
-    margin: 0;
-    position: fixed; /* Fija la barra en la parte superior */
-    top: 0;
-    width: 100%;
-    height: 100px; /* Ajusta la altura de la barra */
-    z-index: 10; /* Asegura que la barra esté por encima de otros elementos */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para un efecto flotante */
-}
-
-/* Estilo para los enlaces del navbar */
-.nav-link {
-    position: relative;
-    text-decoration: none; /* Sin subrayado */
-    color: #6C757D; /* Gris oscuro, más oscuro que el fondo del navbar */
-    font-weight: bold; /* Texto en negrita */
-    font-style: normal; /* Asegura que el texto no esté en cursiva */
-    font-family: "Poppins", sans-serif;
-    padding: 8px 12px; /* Espaciado interno */
-    transition: color 0.3s ease; /* Transición suave para el color */
-}
-
-/* Hover para los enlaces del navbar */
-.nav-link:hover {
-    color: #000000; /* Negro al pasar el mouse */
-}
-
-/* Subrayado animado */
-.nav-link::after {
-    content: ''; /* Pseudo-elemento vacío */
-    position: absolute;
-    bottom: 0; /* Posicionado en la parte inferior del enlace */
-    left: 0; /* Empieza desde la izquierda */
-    width: 0; /* Ancho inicial */
-    height: 2px; /* Altura de la barra */
-    background-color: #000000; /* Negro para la barra */
-    transition: width 0.3s ease; /* Transición para la animación */
-}
-
-.nav-link:hover::after {
-    width: 100%; /* La barra se expande completamente al pasar el mouse */
-}
-
-/* Centrar el cuerpo de la página */
 body {
-    background-color: white;
-    color: black;
-    font-family: "Poppins", sans-serif;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
-    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    max-width: 430px;
+    margin: auto;
+  }
+  
+  .navbar {
+    background-color: #ebebeb;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 90px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #333;
+  }
+  
+  .nav-menu {
+    list-style:none;
+    display: none;
+    flex-direction: column;
+    position:absolute;
+    top: 35px;
+    left: 20px;
+    background-color: #dcdcdc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+      width: 150px;
+  }
+  
+  .nav-menu li {
+    margin: 10px 0;
+  }
+  
+  .nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    background-color: #cfcfcf;
+  }
+  
+  .logo1 {
+    height: 90px;
+  }
+  
+  .logo2 {
+    height: 70px;
+  }
+  
+  .menu-icon {
+    font-size: 35px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+/* Estilo para el contenedor de perfiles */
+.profile-container {
+    margin: 40px auto; /* Aumenta el margen superior para bajar el texto */
+    max-width: 90%; /* Deja márgenes laterales */
+    text-align: center;
 }
 
-/* Título principal */
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px; /* Espacio entre el título y el contenido */
+/* Estilo para el título de "¿Quién eres? Elige tu mascota" */
+.profile-container h1 {
+    font-size: 24px; /* Tamaño del texto */
+    font-weight: 700; /* Peso del texto */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+    color: #000; /* Color del texto */
+    font-family: 'Poppins', sans-serif; /* Asegúrate de usar la misma fuente */
+    line-height: 0.75; /* Reduce el espaciado entre líneas */
 }
 
-/* Contenedor principal */
-.container {
+.profile-container h1 span {
+    display: block; /* Asegura que cada línea esté separada */
+}
+
+/* Estilo para la cuadrícula de perfiles */
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: #B0C4D8;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Estilo para cada perfil */
+.profile-grid .profile {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80%; /* Aumenta el tamaño del contenedor */
-    max-width: 800px; /* Limita el ancho máximo */
-    text-align: center;
-    padding: 20px;
-    background-color: #B0C4D8; /* Azul suave */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
-    margin-bottom: 20px; /* Espacio entre el contenedor principal y el botón */
-    color: #333; /* Texto oscuro para contraste */
 }
 
-/* Contenedor de perfiles */
-.profiles {
-    display: flex;
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: center; /* Centra horizontalmente los elementos */
-    gap: 20px; /* Espacio entre las imágenes de perfil y el botón */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten si hay muchos */
-}
-
-/* Contenedor del perfil */
-.profile {
-    position: relative; /* Necesario para posicionar el botón dentro del contenedor */
-    display: inline-block;
-    margin: 10px;
-    text-align: center;
-}
-
-/* Imagen del perfil */
-.profile-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+/* Estilo para cada perfil */
+.profile-grid .profile img {
+    width: 120px; /* Tamaño de las imágenes */
+    height: 120px; /* Tamaño de las imágenes */
+    border-radius: 50%; /* Hace que las imágenes sean circulares */
+    border: 1px solid #fff; /* Borde muy fino de color blanco */
     object-fit: cover;
-    border: 2px solid black; /* Azul más oscuro para el borde */
+    margin-bottom: 15px; /* Espaciado entre la imagen y el texto */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para la animación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
 }
 
-.profile-img:hover {
-    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+.profile-grid .profile:hover img {
+    transform: scale(1.1); /* Ampliación al hacer hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
 }
 
-.profile p {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333; /* Texto oscuro */
+/* Estilo para el texto debajo de cada perfil */
+.profile-grid .profile p {
+    font-size: 18px; /* Tamaño del texto */
+    font-weight: 600;
+    color: #fff; /* Cambia el color del texto a blanco */
+    text-align: center;
+    margin: 0; /* Elimina márgenes adicionales */
 }
 
-/* Botón de añadir perfil */
+/* Estilo para el perfil de añadir */
 .add-profile {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Asegura que el contenido esté en columna */
     align-items: center;
-    width: 120px; /* Tamaño similar al de las imágenes */
-    height: 120px;
-    border: 2px dashed black; /* Azul más oscuro para el borde */
-    border-radius: 50%; /* Hace el botón redondo */
-    font-size: 36px;
+    justify-content: center;
+}
+
+/* Estilo para el perfil de añadir */
+.add-profile .add-icon {
+    background-color: #D0E0F0; /* Fondo azul más suave en sintonía con el fondo del contenedor */
+    border-radius: 50%; /* Hace que el botón sea circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px; /* Tamaño del botón */
+    height: 120px; /* Tamaño del botón */
+    font-size: 32px; /* Tamaño del icono "+" */
     font-weight: bold;
-    color: #666;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    text-decoration: none; /* Elimina el subrayado */
+    color: #333; /* Color del icono en gris oscuro */
+    margin-bottom: 15px; /* Espaciado entre el botón y el texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para la animación */
 }
 
-.add-profile:hover {
-    background-color: #BBDEFB; /* Azul más claro al pasar el mouse */
-    color: #333;
+.add-profile:hover .add-icon {
+    transform: scale(1.1); /* Ampliación al hacer hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
 }
 
-.admin-btn {
-    background: #B0C4D8;
-    color: black;
+/* Estilo para el texto debajo del botón de añadir perfil */
+.add-profile p {
+    font-size: 18px; /* Tamaño del texto */
+    font-weight: 600;
+    color: #fff; /* Cambia el color del texto a blanco */
+    text-align: center;
+    margin: 0; /* Elimina márgenes adicionales */
+}
+
+/* Botón de administrar mascotas */
+.manage-button {
+    margin-top: 20px;
+    padding: 12px; /* Ajusta el tamaño del botón */
+    background-color: #B0C4D8; /* Fondo azul consistente con los botones de iniciar sesión */
+    color: #fff; /* Texto en blanco */
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: 600; /* Peso del texto */
+    font-family: 'Poppins', sans-serif; /* Asegura que la fuente sea Poppins */
     cursor: pointer;
-    transition: transform 0.3s ease; /* Transición suave para el efecto */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
 }
 
-/* Efecto al pasar el mouse */
-.admin-btn:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+.manage-button:hover {
+    background-color: #A0B8CC; /* Azul más oscuro al hacer hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
 }
 
-/* Animación fadeIn */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.profile {
+    position: relative; /* Necesario para posicionar el botón de eliminar */
 }
 
-/* Botón de eliminar perfil */
-.delete-profile {
-    display: none; /* Oculto por defecto */
+.delete-button {
+    display: none; /* Ocultar por defecto */
     position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: red;
-    color: white;
+    top: 5px; /* Ajusta la posición vertical más cerca del círculo */
+    right: 5px; /* Ajusta la posición horizontal más cerca del círculo */
+    background-color: #ff4d4d; /* Rojo */
+    color: #fff;
     border: none;
     border-radius: 50%;
     width: 20px;
     height: 20px;
     font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
-    text-align: center;
-    line-height: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
-.delete-profile:hover {
-    background-color: darkred;
+.delete-button:hover {
+    background-color: #cc0000; /* Rojo más oscuro */
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+.modal-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirm-btn, .cancel-btn {
+    font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins */
+    background-color: #4CAF50; /* Verde para confirmar */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: 600; /* Negrita */
+}
+
+.cancel-btn {
+    background-color: #f44336; /* Rojo para cancelar */
+}
+
+.confirm-btn:hover {
+    background-color: #388E3C; /* Verde más oscuro */
+}
+
+.cancel-btn:hover {
+    background-color: #d32f2f; /* Rojo más oscuro */
 }

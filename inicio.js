@@ -66,3 +66,75 @@ document.addEventListener('DOMContentLoaded', function () {
         return profileDiv;
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const manageButton = document.querySelector('.manage-button');
+    const deleteButtons = document.querySelectorAll('.delete-button');
+    let isAdminMode = false;
+
+    manageButton.addEventListener('click', function () {
+        isAdminMode = !isAdminMode; // Alternar el modo de administración
+        deleteButtons.forEach(button => {
+            button.style.display = isAdminMode ? 'block' : 'none'; // Mostrar u ocultar botones
+        });
+        manageButton.textContent = isAdminMode ? 'Cancelar' : 'Administrar mascotas'; // Cambiar texto del botón
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-button');
+    const modal = document.getElementById('delete-modal');
+    const confirmDeleteButton = document.getElementById('confirm-delete');
+    const cancelDeleteButton = document.getElementById('cancel-delete');
+    const manageButton = document.querySelector('.manage-button');
+    let profileToDelete = null; // Guardará el perfil que se desea eliminar
+    let isAdminMode = false; // Estado para saber si estamos en modo administración
+
+    // Alternar modo administración
+    manageButton.addEventListener('click', function () {
+        isAdminMode = !isAdminMode; // Cambiar el estado
+        toggleDeleteButtons(isAdminMode);
+        manageButton.textContent = isAdminMode ? 'Cancelar administración' : 'Administrar mascotas';
+    });
+
+    // Mostrar el modal al hacer clic en un botón de eliminar
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            profileToDelete = this.closest('.profile'); // Guardar el perfil asociado
+            modal.style.display = 'flex'; // Mostrar el modal
+        });
+    });
+
+    // Confirmar eliminación
+    confirmDeleteButton.addEventListener('click', function () {
+        if (profileToDelete) {
+            profileToDelete.remove(); // Eliminar el perfil del DOM
+            profileToDelete = null; // Resetear la variable
+        }
+        modal.style.display = 'none'; // Ocultar el modal
+    });
+
+    // Cancelar eliminación
+    cancelDeleteButton.addEventListener('click', function () {
+        profileToDelete = null; // Resetear la variable
+        modal.style.display = 'none'; // Ocultar el modal
+        isAdminMode = false; // Desactivar el modo de administración
+        toggleDeleteButtons(isAdminMode); // Ocultar los botones de eliminar
+        manageButton.textContent = 'Administrar mascotas'; // Restablecer el texto del botón
+    });
+
+    // Cerrar el modal si se hace clic fuera del contenido
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            profileToDelete = null; // Resetear la variable
+            modal.style.display = 'none'; // Ocultar el modal
+        }
+    });
+
+    // Función para mostrar u ocultar los botones de eliminar
+    function toggleDeleteButtons(show) {
+        deleteButtons.forEach(button => {
+            button.style.display = show ? 'block' : 'none';
+        });
+    }
+});

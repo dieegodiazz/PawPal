@@ -1,382 +1,246 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
-
-.logo {
-    height: 90px; /* Altura del logotipo */
-    margin-right: 10px; /* Espaciado entre el logotipo y el nombre */
-    margin-top: 8px; /* Ajusta la posición vertical */
-}
-
-.nombre {
-    height: 200px; /* Altura del nombre */
-    width: auto; /* Mantiene la proporción de la imagen */
-}
-
-.nav {
-    display: flex;
-    align-items: center; /* Centra verticalmente los elementos dentro de la barra */
-    justify-content: space-between; /* Espaciado entre el logotipo y los enlaces */
-    list-style: none;
-    background-color: #D9DBDC; /* Fondo gris claro */
-    padding: 10px 20px; /* Ajusta el espaciado interno */
-    margin: 0;
-    position: fixed; /* Fija la barra en la parte superior */
-    top: 0;
-    width: 100%;
-    height: 100px; /* Ajusta la altura de la barra */
-    z-index: 10; /* Asegura que la barra esté por encima de otros elementos */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para un efecto flotante */
-}
-
-/* Estilo para los enlaces del navbar */
-.nav-link {
-    position: relative;
-    text-decoration: none; /* Sin subrayado */
-    color: #6C757D; /* Gris oscuro, más oscuro que el fondo del navbar */
-    font-weight: bold; /* Texto en negrita */
-    font-style: normal; /* Asegura que el texto no esté en cursiva */
-    font-family: "Poppins", sans-serif;
-    padding: 8px 12px; /* Espaciado interno */
-    transition: color 0.3s ease; /* Transición suave para el color */
-}
-
-/* Hover para los enlaces del navbar */
-.nav-link:hover {
-    color: #000000; /* Negro al pasar el mouse */
-}
-
-/* Subrayado animado */
-.nav-link::after {
-    content: ''; /* Pseudo-elemento vacío */
-    position: absolute;
-    bottom: 0; /* Posicionado en la parte inferior del enlace */
-    left: 0; /* Empieza desde la izquierda */
-    width: 0; /* Ancho inicial */
-    height: 2px; /* Altura de la barra */
-    background-color: #000000; /* Negro para la barra */
-    transition: width 0.3s ease; /* Transición para la animación */
-}
-
-.nav-link:hover::after {
-    width: 100%; /* La barra se expande completamente al pasar el mouse */
-}
-
-/* Aplica la fuente Poppins a todos los elementos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif; /* Establece Poppins como fuente predeterminada */
-}
-
-/* Estilo para el body */
 body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    max-width: 430px;
+    margin: auto;
+}
+  
+.navbar {
+    background-color: #ebebeb;
+    padding: 10px 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f8f8f8;
-    overflow: hidden;
-}
-
-.container {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    animation: fadeIn 0.7s ease-out; /* Aplica la animación al contenedor */
-    opacity: 0; /* Asegura que el contenedor esté inicialmente invisible */
-    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
-}
-
-/* Animación de entrada */
-@keyframes fadeIn {
-    from {
-        opacity: 0; /* Comienza invisible */
-        transform: translateY(20px); /* Desplazamiento hacia abajo */
-    }
-    to {
-        opacity: 1; /* Termina completamente visible */
-        transform: translateY(0); /* Sin desplazamiento */
-    }
-}
-
-/* Aplica la animación a los elementos de la right-section */
-.right-section .fade-in {
-    animation: fadeIn 0.7s ease-out; /* Duración de 0.7 segundos con una transición suave */
-    opacity: 0; /* Asegura que los elementos estén inicialmente invisibles */
-    animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
-}
-
-.left-section {
-    background: #B0C4D8;
-    width: 50vw; /* La sección ocupa el 50% del contenedor principal */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Asegura que la sección ocupe toda la altura del contenedor */
-    overflow: hidden; /* Oculta cualquier contenido que exceda los límites */
-    padding: 0; /* Elimina cualquier espacio interno */
-}
-
-.carousel-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0; /* Oculta las imágenes por defecto */
-    transition: opacity 0.5s ease; /* Transición suave al cambiar de imagen */
-}
-
-.image-carousel {
-    position: relative; /* No absolute, para que respete .left-section */
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.carousel-image.active {
-    opacity: 1; /* Muestra la imagen activa */
-    z-index: 1; /* Asegura que la imagen activa esté al frente */
-}
-
-.right-section {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    background: white;
-    box-shadow: -4px 0 8px rgba(0,0,0,0.1);
-}
-
-/* Estilo para el texto de registro */
-.right-section p {
-    margin-top: 20px; /* Agrega espacio superior */
-    text-align: center; /* Centra el texto */
-    font-size: 14px; /* Tamaño de fuente */
-    color: #6C757D; /* Color gris oscuro */
-    font-family: 'Montserrat', sans-serif; /* Fuente consistente con el diseño */
-}
-
-.login-btn {
-    background: #B0C4D8;
-    color: black;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease; /* Transición suave para el efecto */
-}
-
-/* Efecto al pasar el mouse */
-.login-btn:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
-}
-
-.google-btn {
-    background: #4285F4;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 100%;
-    max-width: 300px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.divider {
-    text-align: center;
-    margin: 20px 0;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: 90px;
+    font-family: 'Poppins', sans-serif;
     position: relative;
-    width: 100%;
-    max-width: 300px;
-}
-.divider::before, .divider::after {
-    content: "";
-    display: block;
-    width: 40%;
-    height: 1px;
-    background: #ccc;
-    position: absolute;
-    top: 50%;
-}
-.divider::before { left: 0; }
-.divider::after { right: 0; }
-form {
+  }
+  
+  .nav-left {
     display: flex;
+    align-items: center;
+  }
+  
+  .menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #333;
+  }
+  
+  .nav-menu {
+    list-style:none;
+    display: none;
     flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-}
-input {
+    position:absolute;
+    top: 35px;
+    left: 20px;
+    background-color: #dcdcdc;
+    border-radius: 10px;
     padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+      width: 150px;
+  }
+  
+  .nav-menu li {
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.login-btn {
-    background: #B0C4D8;
-    color: black;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
+  }
+  
+  .nav-menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 5px 10px;
+    display: block;
+    border-radius: 6px;
+    transition: background 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    background-color: #cfcfcf;
+  }
+  
+  .logo1 {
+    height: 90px;
+  }
+  
+  .logo2 {
+    height: 70px;
+  }
+  
+  .menu-icon {
+    font-size: 35px;
+    font-weight: 600;
     cursor: pointer;
-}
-.links {
-    font-family: "Poppins", sans-serif; /* Fuente consistente con el diseño */  
-    font-size: 14px; /* Tamaño de fuente */
-    color: #007BFF; /* Mismo tono de azul que el resto de los enlaces */
-    text-decoration: none; /* Sin subrayado */
-    transition: color 0.3s ease; /* Transición suave para el color */
-    margin-bottom: 10px; /* Espacio inferior */
-    text-align: right; /* Alinear a la derecha */
+  }
+
+/* Estilo para el título de iniciar sesión */
+.login h2 {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+    font-family: 'Poppins', sans-serif; /* Asegúrate de que la fuente sea la misma */
 }
 
-.links:hover {
-    color: #0056b3; /* Azul más oscuro al pasar el mouse */
-    text-decoration: underline; /* Subrayado al pasar el mouse */
+/* Centrar el formulario con márgenes laterales */
+.login {
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    padding: 20px; /* Espaciado interno */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
-/* Contenedor de botones sociales */
-.social-buttons {
+/* Estilo para los campos del formulario */
+.login form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif; /* Asegúrate de que la fuente sea la misma */
+    color: #333; /* Color del texto */
+    box-sizing: border-box;
+}
+
+/* Estilo para el botón de inicio de sesión */
+.login-btn {
+    width: auto; /* Ajusta el ancho del botón automáticamente */
+    padding: 12px 40px; /* Aumenta el relleno horizontal para hacerlo más ancho */
+    background-color: #B0C4D8; /* Fondo azul suave como en el botón de registro */
+    color: #fff; /* Texto en blanco */
+    font-size: 16px; /* Tamaño del texto */
+    font-weight: 600; /* Peso del texto */
+    font-family: 'Poppins', sans-serif; /* Asegura que la fuente sea Poppins */
+    border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    display: block;
+    margin: 20px auto 0; /* Centra el botón horizontalmente */
+}
+
+.login-btn:hover {
+    background-color: #A0B8CC; /* Azul más oscuro al hacer hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
+}
+
+/* Estilo para el texto debajo del formulario */
+.login p {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+.login p a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login p a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el enlace de "¿Olvidaste tu contraseña?" */
+.forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    color: #007BFF;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el divisor "o" */
+.divider {
     display: flex;
-    flex-direction: column; /* Alinea el texto y los botones en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
-    margin-top: -25px; /* Reduce aún más el margen superior para subir el contenido */
-}
-
-/* Estilo para el texto encima de los botones sociales */
-.social-text {
-    font-size: 16px; /* Tamaño de fuente */
-    color: #6C757D; /* Color gris oscuro */
-    text-align: center; /* Centra el texto */
-    margin-bottom: 10px; /* Espaciado inferior */
-    font-family: 'Montserrat', sans-serif; /* Fuente consistente con el diseño */
-}
-
-/* Contenedor para los iconos sociales */
-.social-icons {
-    display: flex; /* Alinea los botones en una fila */
-    justify-content: center; /* Centra los botones horizontalmente */
-    gap: 15px; /* Espaciado entre los botones */
-}
-
-/* Estilo general para los botones sociales */
-.social-btn {
-    border: none; /* Sin borde */
-    background: none; /* Sin fondo */
-    padding: 0; /* Sin padding */
-    cursor: pointer; /* Cambia el cursor al pasar el mouse */
-    transition: transform 0.3s ease; /* Efecto de hover */
-}
-
-/* Efecto al pasar el mouse */
-.social-btn:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
-}
-
-/* Estilo para los íconos */
-.social-btn img {
-    width: 50px; /* Tamaño del ícono */
-    height: 50px;
-    border-radius: 50%; /* Hace que la imagen sea redonda */
-}
-
-/* Animación de deslizamiento y desvanecimiento */
-.slide-out-left {
-    animation: slideOutLeft 0.7s ease forwards; /* Aplica la animación de salida */
-}
-
-@keyframes slideOutLeft {
-    from {
-        opacity: 1; /* Comienza completamente visible */
-        transform: translateX(0); /* Posición inicial */
-    }
-    to {
-        opacity: 0; /* Termina completamente invisible */
-        transform: translateX(-100%); /* Se desliza hacia la izquierda */
-    }
-}
-
-.left-section.registro {
-    background: white; /* Fondo blanco para el formulario */
-    width: 50vw; /* Ocupa el 50% del contenedor */
-    display: flex;
-    flex-direction: column; /* Alinea los elementos en columna */
-    justify-content: flex-start; /* Alinea el contenido al inicio */
-    align-items: center; /* Centra horizontalmente el contenido */
-    padding: 150px 40px; /* Incrementa el espaciado superior a 100px */
-    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); /* Sombra para separar visualmente */
-    height: 100vh; /* Asegura que ocupe toda la altura */
-}
-
-.left-section.registro p {
-    font-size: 14px; /* Ajusta el tamaño del texto para que coincida con el resto */
-    color: #6C757D; /* Color gris oscuro para consistencia */
-    font-family: "Poppins", sans-serif; /* Asegura que use la fuente Poppins */
-    text-align: center; /* Centra el texto */
-    margin-top: 20px; /* Espaciado superior para separarlo del botón */
-}
-
-/* Estilo específico para la right-section en la página de registro */
-.right-section.registro {
-    background: #B0C4D8; /* Fondo para las imágenes */
-    width: 50vw; /* Ocupa el 50% del contenedor */
-    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    height: 100vh; /* Asegura que ocupe toda la altura */
-    overflow: hidden; /* Oculta contenido desbordado */
-    padding: 0; /* Elimina el espaciado interno */
-}
-
-.right-section.registro .image-carousel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.right-section.registro .carousel-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0; /* Oculta las imágenes por defecto */
-    transition: opacity 0.5s ease; /* Transición suave al cambiar de imagen */
-}
-
-.right-section.registro .carousel-image.active {
-    opacity: 1; /* Muestra la imagen activa */
-    z-index: 1; /* Asegura que la imagen activa esté al frente */
-}
-
-.checkbox-container {
-    display: flex;
-    align-items: center;
-    margin-top: 15px; /* Espaciado superior */
+    margin: 20px 0;
+    color: #333; /* Color del texto */
     font-size: 14px; /* Tamaño del texto */
-    color: #6C757D; /* Color gris oscuro */
-    font-family: "Poppins", sans-serif; /* Fuente consistente con el diseño */
-    text-align: justify;
+    font-weight: 600; /* Peso del texto */
+    font-family: 'Poppins', sans-serif; /* Asegúrate de usar la misma fuente */
 }
 
-.checkbox-container input[type="checkbox"] {
-    margin-right: 10px; /* Espaciado entre la casilla y el texto */
-    width: 16px;
-    height: 16px;
-    cursor: pointer; /* Cambia el cursor al pasar sobre la casilla */
+.divider span {
+    padding: 0 10px; /* Espaciado horizontal alrededor de la "o" */
 }
 
-.checkbox-container a {
-    color: #007bff; /* Color azul para los enlaces */
-    text-decoration: none; /* Sin subrayado */
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ccc; /* Color de las líneas */
+    margin: 0 10px;
 }
 
-.checkbox-container a:hover {
-    color: #0056b3;
-    text-decoration: underline; /* Subrayado al pasar el cursor */
+/* Estilo para la sección de inicio de sesión con Google */
+.google-login {
+    text-align: center;
+    margin: 20px 0; /* Espaciado uniforme arriba y abajo */
+}
+
+.google-login p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px; /* Espaciado entre el texto y el ícono */
+}
+
+.google-icon {
+    display: block; /* Asegura que el ícono esté centrado */
+    margin: 0 auto; /* Centra el ícono horizontalmente */
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.google-icon:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
+
+/* Ajuste para el texto de registro */
+.register-text {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    margin-top: 20px; /* Espaciado uniforme con la sección de Google */
+}
+
+.register-text a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para las huellas en la parte baja de la pantalla */
+.footer-image {
+    background-image: url('imagenes/huellas.png'); /* Asegúrate de que la ruta sea correcta */
+    background-repeat: no-repeat;
+    background-size: 70%; /* Tamaño de las huellas */
+    background-position: center; /* Centra las huellas horizontalmente */
+    position: fixed; /* Fija las huellas en la pantalla */
+    bottom: 50px; /* Baja las huellas más cerca del borde inferior */
+    left: 0;
+    right: 0;
+    height: 250px; /* Ajusta la altura del contenedor */
+    pointer-events: none; /* Evita que interfieran con los clics en otros elementos */
+    z-index: -1; /* Coloca las huellas detrás del contenido */
 }
