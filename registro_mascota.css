@@ -173,6 +173,10 @@ body {
     height: auto; /* Permite que el campo de archivo ajuste su altura automáticamente */
 }
 
+.file-label {
+    display: none; /* Oculta el <span> ya que siempre estará vacío */
+}
+
 .submit-btn {
     width: auto; /* Ajusta el ancho del botón automáticamente */
     padding: 12px 40px; /* Aumenta el relleno horizontal para hacerlo más ancho */
@@ -193,4 +197,32 @@ body {
 .submit-btn:hover {
     background-color: #A0B8CC; /* Azul más oscuro al hacer hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
+}
+
+.image-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente la imagen y el botón */
+    margin-bottom: 15px;
+}
+
+.remove-file-btn {
+    width: auto; /* Ajusta el ancho del botón automáticamente */
+    padding: 12px 40px; /* Mismo padding que submit-btn */
+    background-color: #FF6B6B; /* Fondo rojo */
+    color: #fff; /* Texto blanco */
+    font-size: 16px; /* Mismo tamaño de texto que submit-btn */
+    font-weight: 600; /* Mismo peso de texto que submit-btn */
+    font-family: 'Poppins', sans-serif; /* Misma fuente */
+    border: none;
+    border-radius: 8px; /* Mismos bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Misma transición */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Misma sombra */
+    margin-top: 10px; /* Espaciado superior para separarlo de la imagen */
+}
+
+.remove-file-btn:hover {
+    background-color: #E63946; /* Fondo rojo más oscuro al hacer hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Misma sombra más intensa al hacer hover */
 }

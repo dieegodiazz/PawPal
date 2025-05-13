@@ -106,30 +106,35 @@ body {
     box-sizing: border-box;
 }
 
-/* Estilo para el contenedor del checkbox */
-.checkbox-container {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #333;
+.checkbox-block {
+  position: relative;
+  padding-left: 25px; /* espacio para el checkbox */
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #333;
+  text-align: justify;
 }
 
-.checkbox-container input[type="checkbox"] {
-    margin-right: 10px;
-    margin-top: 3px;
+.checkbox-block input[type="checkbox"] {
+  position: absolute;
+  right: 166px;
+  top: 1px;
 }
 
-/* Estilo para los enlaces dentro del checkbox */
-.checkbox-container a {
-    color: #007BFF;
-    text-decoration: none;
+.checkbox-block label {
+  display: block;
+  line-height: 1.5;
 }
 
-.checkbox-container a:hover {
-    text-decoration: underline;
+.checkbox-block a {
+  color: #007BFF;
+  text-decoration: none;
 }
+
+.checkbox-block a:hover {
+  text-decoration: underline;
+}
+
 
 /* Estilo para el botón de registro */
 .login-btn {

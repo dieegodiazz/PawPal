@@ -32,29 +32,32 @@
     </a>
 
     <div class="form-container">
-    <h1>Registrar Mascota</h1>
-    <form id="pet-form">
-        <div class="form-group">
-            <input type="text" id="pet-name" name="pet-name" placeholder="Nombre de la Mascota" required>
-        </div>
-        <div class="form-group">
-            <input type="text" id="pet-type" name="pet-type" placeholder="Tipo de Mascota" required>
-        </div>
-        <div class="form-group">
-            <input type="text" id="pet-breed" name="pet-breed" placeholder="Raza">
-        </div>
-        <div class="form-group">
-            <input type="number" id="pet-age" name="pet-age" placeholder="Edad en años" min="0">
-        </div>
-        <div class="form-group">
-            <input type="file" id="pet-image" name="pet-image" accept="image/*">
-        </div>
-        <div class="form-group">
-            <img id="image-preview" src="#" alt="Previsualización de la imagen" style="display: none; max-width: 100%; height: auto; border: 1px solid #ccc; margin-top: 10px;">
-        </div>
-        <button type="submit" class="submit-btn">Registrar Mascota</button>
-    </form>
-</div>
+        <h1>Registrar Mascota</h1>
+        <form id="pet-form">
+            <div class="form-group">
+                <input type="text" id="pet-name" name="pet-name" placeholder="Nombre de la Mascota" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="pet-type" name="pet-type" placeholder="Tipo de Mascota" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="pet-breed" name="pet-breed" placeholder="Raza">
+            </div>
+            <div class="form-group">
+                <input type="number" id="pet-age" name="pet-age" placeholder="Edad en años" min="0">
+            </div>
+            
+            <div class="form-group">
+                <input type="file" id="pet-image" name="pet-image" accept="image/*" onchange="handleFileSelection(this)">
+                <span id="file-name" class="file-label">Ningún archivo seleccionado</span>
+            </div>
+            <div class="form-group image-preview">
+                <img id="image-preview" src="#" alt="Previsualización de la imagen" style="display: none; max-width: 100%; height: auto; border: 1px solid #ccc; margin-top: 10px;">
+                <button type="button" id="remove-file-btn" class="remove-file-btn" style="display: none;" onclick="removeFile()">Eliminar selección</button>
+            </div>
+            <button type="submit" class="submit-btn">Registrar Mascota</button>
+        </form>
+    </div>
 </div>
 </body>
 </html>

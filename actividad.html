@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad</title>
+    <link rel="stylesheet" href="actividad.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="actividad.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu-icon" id="menu-toggle">☰</div>
+            <img src="imagenes/logoSinFondo.png" alt="P Logo" class="logo1" />
+            <img src="imagenes/nombreSinFondo.png" alt="Nombre Logo" class="logo2" />
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#miperfil">Mi Perfil</a></li>
+            <li><a href="#cambiarmascota">Cambiar de Mascota</a></li>
+            <li><a href="#configfamilia">Configurar Familia</a></li>
+            <li><a href="#escaneartag">Escanear Tag</a></li>
+            <li><a href="#cerrarsesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <div class="back-link-container">
+        <a href="menu.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver
+        </a>
+    </div>
+
+    <div class="form-container">
+        <div class="title-with-help">
+            <h1>Actividad</h1>
+            <span class="help-icon"><i class="fas fa-question-circle"></i></span>
+        </div>
+        <div id="help-tooltip" class="help-tooltip">
+            <ul>
+                <li><strong>Movimiento activo</strong> – Tiempo total en movimiento del día.</li>
+                <li><strong>Energía en actividad</strong> – Cantidad de energía consumida durante la actividad del día.</li>
+                <li><strong>Energía en reposo</strong> – Cantidad de energía consumida durante el reposo del día.</li>
+            </ul>
+        </div>
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-header">
+                    <span class="stat-label">
+                        <i class="fas fa-fire"></i> Movimiento activo
+                    </span>
+                    <div class="progress-wrapper">
+                        <span class="progress-indicator">85%</span>
+                        <canvas id="progressChart1" class="progress-chart" width="35" height="35"></canvas>
+                    </div>
+                </div>
+                <span class="stat-value">3.4 hrs</span>
+                <canvas id="chart1" class="activity-chart" width="300" height="100"></canvas>
+                <span class="progress-goal">Objetivo: 4.0 hrs</span>
+            </div>
+            <div class="stat-box">
+                <div class="stat-header">
+                    <span class="stat-label">
+                        <i class="fas fa-fire"></i> Energía en actividad
+                    </span>
+                    <div class="progress-wrapper">
+                        <span class="progress-indicator">80%</span>
+                        <canvas id="progressChart2" class="progress-chart" width="35" height="35"></canvas>
+                    </div>
+                </div>
+                <span class="stat-value">159 kcal</span>
+                <canvas id="chart2" class="activity-chart" width="300" height="100"></canvas>
+                <span class="progress-goal">Objetivo: 200 kcal</span>
+            </div>
+            <div class="stat-box">
+                <div class="stat-header">
+                    <span class="stat-label">
+                        <i class="fas fa-fire"></i> Energía en reposo
+                    </span>
+                    <div class="progress-wrapper">
+                        <span class="progress-indicator">101%</span>
+                        <canvas id="progressChart3" class="progress-chart" width="35" height="35"></canvas>
+                    </div>
+                </div>
+                <span class="stat-value">405 kcal</span>
+                <canvas id="chart3" class="activity-chart" width="300" height="100"></canvas>
+                <span class="progress-goal">Objetivo: 400 kcal</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
