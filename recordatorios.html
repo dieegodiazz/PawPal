@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordatorios</title>
+    <link rel="stylesheet" href="recordatorios.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="recordatorios.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu-icon" id="menu-toggle">☰</div>
+            <img src="imagenes/logoSinFondo.png" alt="P Logo" class="logo1" />
+            <img src="imagenes/nombreSinFondo.png" alt="Nombre Logo" class="logo2" />
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#miperfil">Mi Perfil</a></li>
+            <li><a href="#cambiarmascota">Cambiar de Mascota</a></li>
+            <li><a href="#configfamilia">Configurar Familia</a></li>
+            <li><a href="#escaneartag">Escanear Tag</a></li>
+            <li><a href="#cerrarsesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <div class="back-link-container">
+        <a href="menu.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver
+        </a>
+    </div>
+
+    <div class="form-container">
+        <div class="title-with-help">
+            <h1>Recordatorios <span class="reminder-count">?</span></h1>
+            <span class="help-icon"><i class="fas fa-question-circle"></i></span>
+        </div>
+        <div id="help-tooltip" class="help-tooltip">
+            <ul>
+                <li><strong>Movimiento activo</strong> – Tiempo total en movimiento del día.</li>
+                <li><strong>Energía en actividad</strong> – Cantidad de energía consumida durante la actividad del día.</li>
+                <li><strong>Energía en reposo</strong> – Cantidad de energía consumida durante el reposo del día.</li>
+            </ul>
+        </div>
+        
+        <div class="reminders-section" id="reminders-list">
+            <div class="reminder-item" data-time="13:30" data-date="2025-04-20">
+                <span class="reminder-icon" style="background-color: #FFC107;"></span>
+                Reponer pienso
+                <span class="reminder-time">13:30h</span>
+            </div>
+            <div class="reminder-item" data-time="18:00" data-date="2025-04-20">
+                <span class="reminder-icon" style="background-color: #4CAF50;"></span>
+                Pasear a Toby
+                <span class="reminder-time">18:00h</span>
+            </div>
+            <div class="reminder-item" data-time="20:30" data-date="2025-04-20">
+                <span class="reminder-icon" style="background-color: #F44336;"></span>
+                Dar medicina
+                <span class="reminder-time">20:30h</span>
+            </div>
+        </div>
+
+        <div class="calendar-section">
+            <h2>Calendario</h2>
+            <div class="month-selector">
+                <button id="prev-month"><</button>
+                <span id="current-month">Abril</span>
+                <button id="next-month">></button>
+            </div>
+            <div class="calendar-grid" id="calendar-grid">
+                <div class="calendar-day">Lun</div>
+                <div class="calendar-day">Mar</div>
+                <div class="calendar-day">Mié</div>
+                <div class="calendar-day">Jue</div>
+                <div class="calendar-day">Vie</div>
+                <div class="calendar-day">Sáb</div>
+                <div class="calendar-day">Dom</div>
+            </div>
+        </div>
+
+        <button class="new-reminder-btn" id="new-reminder-btn">Nuevo Recordatorio</button>
+    </div>
+</body>
+</html>
