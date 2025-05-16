@@ -16,6 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Cerrar el tooltip al hacer scroll hacia abajo
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScrollTop && helpTooltip.style.display === 'block') {
+            helpTooltip.style.display = 'none';
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para manejar scroll hacia arriba
+    });
+
     // Gráficas de barras
     const ctx1 = document.getElementById('chart1').getContext('2d');
     new Chart(ctx1, {

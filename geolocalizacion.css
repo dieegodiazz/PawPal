@@ -79,45 +79,45 @@ body {
 
 /* Back Link */
 .back-link-container {
-    text-align: left; /* Alinea el contenido a la izquierda */
-    margin: 20px 0; /* Margen superior e inferior */
-    padding: 0 20px; /* Relleno lateral */
+    text-align: left;
+    margin: 20px 0;
+    padding: 0 20px;
 }
 
 .back-link {
-    display: inline-flex; /* Alinea el icono y el texto horizontalmente */
-    align-items: center; /* Centra el icono verticalmente con el texto */
-    color: #333; /* Texto en gris oscuro */
+    display: inline-flex;
+    align-items: center;
+    color: #333;
     font-size: 16px;
-    font-weight: 600; /* Texto en negrita */
-    font-family: 'Poppins', sans-serif; /* Usa la fuente Poppins */
-    text-decoration: none; /* Elimina el subrayado del enlace */
-    transition: color 0.3s ease, transform 0.2s ease; /* Transición suave */
-    position: relative; /* Necesario para el efecto ::after */
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    position: relative;
 }
 
 .back-link i {
-    margin-right: 8px; /* Espaciado entre la flecha y el texto */
+    margin-right: 8px;
 }
 
 .back-link::after {
-    content: ''; /* Crea una línea */
+    content: '';
     position: absolute;
-    bottom: -2px; /* Posiciona la línea justo debajo del texto */
+    bottom: -2px;
     left: 0;
-    width: 0; /* Comienza con un ancho de 0 */
-    height: 2px; /* Grosor de la línea */
-    background-color: #007BFF; /* Color de la línea */
-    transition: width 0.3s ease; /* Transición suave para el despliegue */
+    width: 0;
+    height: 2px;
+    background-color: #007BFF;
+    transition: width 0.3s ease;
 }
 
 .back-link:hover {
-    color: #007BFF; /* Cambia el color del texto al hacer hover */
-    transform: scale(1.05); /* Efecto de ampliación al hacer hover */
+    color: #007BFF;
+    transform: scale(1.05);
 }
 
 .back-link:hover::after {
-    width: 100%; /* La línea se despliega completamente al hacer hover */
+    width: 100%;
 }
 
 /* Formulario */
@@ -126,28 +126,29 @@ body {
     margin: 0 auto;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    position: relative; /* Ensure the container is a positioning context for the tooltip */
 }
 
 .form-container h1 {
-    font-size: 24px; /* Tamaño del texto */
-    font-weight: 700; /* Peso del texto */
-    text-align: center; /* Centra el texto */
-    margin-bottom: 20px; /* Espaciado inferior */
-    color: #000; /* Color del texto */
-    font-family: 'Poppins', sans-serif; /* Asegúrate de usar la misma fuente */
-    line-height: 0.75; /* Espaciado entre líneas */
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    line-height: 0.75;
 }
 
 .map-container {
-    width: 90%; /* Reduce el ancho al 90% del contenedor */
-    max-width: 400px; /* Ancho máximo para pantallas grandes */
-    height: 300px; /* Altura del mapa */
-    background-color: #a9e9a9; /* Color verde claro para simular el mapa */
-    border-radius: 20px; /* Bordes redondeados */
-    border: 2px solid #000; /* Borde negro de 2px */
-    margin: 0 auto 20px; /* Centra el mapa horizontalmente y añade margen inferior */
+    width: 90%;
+    max-width: 400px;
+    height: 300px;
+    background-color: #a9e9a9;
+    border-radius: 20px;
+    border: 2px solid #000;
+    margin: 0 auto 20px;
     position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .map-container::before {
@@ -162,86 +163,86 @@ body {
 }
 
 .leaflet-popup-content {
-    font-family: 'Poppins', sans-serif; /* Fuente consistente */
-    font-size: 14px; /* Tamaño del texto */
-    color: #333; /* Color del texto */
-    line-height: 1.5; /* Espaciado entre líneas */
-    margin: 0 10px; /* Añade 20px de margen a los lados (ajusta según prefieras) */
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    margin: 0 10px;
 }
 
 .lost-pet-btn,
 .scan-tag-btn {
-    width: 100%; /* Ambos botones ocuparán el 100% del contenedor */
-    max-width: 250px; /* Ancho máximo para evitar que sean demasiado grandes */
-    padding: 12px 40px; /* Relleno interno */
-    font-size: 16px; /* Tamaño del texto */
-    font-weight: 600; /* Negrita */
-    font-family: 'Poppins', sans-serif; /* Fuente consistente */
-    border: none; /* Sin bordes */
-    border-radius: 8px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
-    display: block; /* Asegura que el botón ocupe solo su contenido */
-    margin: 10px auto; /* Centra el botón horizontalmente */
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 10px auto;
 }
 
 .lost-pet-btn,
 .found-pet-btn {
-    width: 100%; /* Ambos botones ocuparán el 100% del contenedor */
-    max-width: 250px; /* Ancho máximo para evitar que sean demasiado grandes */
-    padding: 12px 40px; /* Relleno interno */
-    font-size: 16px; /* Tamaño del texto */
-    font-weight: 600; /* Negrita */
-    font-family: 'Poppins', sans-serif; /* Fuente consistente */
-    border: none; /* Sin bordes */
-    border-radius: 8px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
-    display: block; /* Asegura que el botón ocupe solo su contenido */
-    margin: 10px auto; /* Centra el botón horizontalmente */
+    width: 100%;
+    max-width: 250px;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 10px auto;
 }
 
 .lost-pet-btn {
-    background-color: #FF6B6B; /* Rojo para "Mascota Perdida" */
-    color: #fff; /* Texto blanco */
+    background-color: #FF6B6B;
+    color: #fff;
 }
 
 .lost-pet-btn:hover {
-    background-color: #E63946; /* Rojo más oscuro al hacer hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    background-color: #E63946;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .found-pet-btn {
-    background-color: #6BCB77; /* Verde para "Mascota Encontrada" */
-    color: #fff; /* Texto blanco */
+    background-color: #6BCB77;
+    color: #fff;
 }
 
 .found-pet-btn:hover {
-    background-color: #58A66C; /* Verde más oscuro al hacer hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    background-color: #58A66C;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .scan-tag-btn {
-    background-color: #B0C4D8; /* Gris azulado para "Escanear Tag" */
-    color: #fff; /* Texto blanco */
+    background-color: #B0C4D8;
+    color: #fff;
 }
 
 .scan-tag-btn:hover {
-    background-color: #A0B8CC; /* Gris azulado más oscuro al hacer hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    background-color: #A0B8CC;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos para el modal */
 .modal {
-    display: none; /* Ocultar por defecto */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -263,28 +264,28 @@ body {
 }
 
 .confirm-btn, .cancel-btn {
-    font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins */
-    background-color: #4CAF50; /* Verde para confirmar */
+    font-family: 'Poppins', sans-serif;
+    background-color: #4CAF50;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-size: 16px; /* Tamaño del texto */
-    font-weight: 600; /* Negrita */
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .cancel-btn {
-    background-color: #f44336; /* Rojo para cancelar */
+    background-color: #f44336;
 }
 
 .confirm-btn:hover {
-    background-color: #388E3C; /* Verde más oscuro */
+    background-color: #388E3C;
 }
 
 .cancel-btn:hover {
-    background-color: #d32f2f; /* Rojo más oscuro */
+    background-color: #d32f2f;
 }
 
 /* Estilos para el tooltip de ayuda */
@@ -298,34 +299,36 @@ body {
 .help-icon {
     margin-left: 10px;
     cursor: pointer;
-    color: #a9a9a9; /* Mismo color que el fondo del tooltip */
-    font-size: 20px; /* Tamaño del ícono */
+    color: #a9a9a9;
+    font-size: 20px;
 }
 
 .help-icon:hover {
-    color: #8888; /* Un gris más oscuro al pasar el cursor */
+    color: #8888;
 }
 
 .help-tooltip {
-    display: none; /* Ocultar por defecto */
-    position: fixed; /* Fija la posición en la pantalla */
-    top: 44%; /* Centra verticalmente */
-    left: 50%; /* Centra horizontalmente */
-    transform: translate(-50%, -50%); /* Ajusta el centro exacto */
-    width: calc(100% - 60px); /* Resta 20px de margen a cada lado */
-    max-width: 400px; /* Ancho máximo del tooltip */
-    background-color: #dcdcdc; /* Fondo gris */
-    border-radius: 20px; /* Bordes más redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
-    padding: 15px; /* Espaciado interno */
-    z-index: 2000; /* Asegura que esté superpuesto a todo */
-    text-align: left; /* Alinea el texto a la izquierda */
+    display: none;
+    position: absolute; /* Changed to absolute to position relative to form-container */
+    top: 53px; /* Positioned just below the title (h1 height + margin) */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: calc(100% - 60px);
+    max-width: 400px;
+    background-color: #dcdcdc;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 2000;
+    text-align: left;
 }
 
-.help-tooltip p {
+.help-tooltip ul {
     margin: 0;
-    font-family: 'Poppins', sans-serif; /* Fuente consistente */
-    font-size: 14px; /* Tamaño del texto */
-    color: #333; /* Color del texto */
-    line-height: 1.5; /* Espaciado entre líneas */
+    padding-left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    text-align: justify;
 }

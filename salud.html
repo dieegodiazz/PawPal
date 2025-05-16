@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud</title>
+    <link rel="stylesheet" href="salud.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="salud.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu-icon" id="menu-toggle">☰</div>
+            <img src="imagenes/logoSinFondo.png" alt="P Logo" class="logo1" />
+            <img src="imagenes/nombreSinFondo.png" alt="Nombre Logo" class="logo2" />
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#miperfil">Mi Perfil</a></li>
+            <li><a href="#cambiarmascota">Cambiar de Mascota</a></li>
+            <li><a href="#configfamilia">Configurar Familia</a></li>
+            <li><a href="#escaneartag">Escanear Tag</a></li>
+            <li><a href="#cerrarsesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <div class="back-link-container">
+        <a href="menu.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver
+        </a>
+    </div>
+
+    <div class="form-container">
+        <div class="title-with-help">
+            <h1>Salud <span class="reminder-count"></span></h1>
+            <span class="help-icon"><i class="fas fa-question-circle"></i></span>
+        </div>
+        <div id="help-tooltip" class="help-tooltip">
+            <ul>
+                <p>¿Qué puedes consultar?:</p>
+                <li><strong>Gestión médica -</strong> <span>Trata de manera online con veterinarios y consulta tus recetas disponibles.</span></li>
+                <li><strong>Cartilla de vacunas -</strong> <span> Visualiza el registro de vacunas que se le han puesto a tu mascota.</span></li>
+                <li><strong>Calendario patológico -</strong> <span>Ten a mano un calendario con los síntomas que experimenta tu mascota.</span></li>
+                <li><strong>Monitorización de constantes -</strong> <span>Consulta las constantes vitales de tu mascota en tiempo real.</span></li>
+            </ul>
+        </div>
+        <div class="button-grid">
+            <button class="health-button">
+                Gestión<br>Médica
+            </button>
+            <button class="health-button">Cartilla vacunas</button>
+            <button class="health-button">Calendario patológico</button>
+            <button class="health-button">Monitorización de constantes</button>
+        </div>
+
+        <!-- New Health Tips Section -->
+        <div class="health-tips-section">
+            <h2>Consejos de Salud y Bienestar</h2>
+            <div class="health-tips-container">
+                <div class="health-tip-card">
+                    <h3>Alimentación Equilibrada</h3>
+                    <p>Asegúrate de que tu mascota reciba una dieta equilibrada adecuada para su edad, tamaño y nivel de actividad. Consulta con un veterinario para elegir el mejor alimento.</p>
+                </div>
+                <div class="health-tip-card">
+                    <h3>Ejercicio Diario</h3>
+                    <p>Proporciona a tu mascota al menos 30 minutos de ejercicio al día. Paseos, juegos y actividades al aire libre ayudan a mantener su peso y felicidad.</p>
+                </div>
+                <div class="health-tip-card">
+                    <h3>Revisiones Veterinarias</h3>
+                    <p>Lleva a tu mascota al veterinario al menos una vez al año para chequeos generales y mantener al día sus vacunas y desparasitaciones.</p>
+                </div>
+                <div class="health-tip-card">
+                    <h3>Higiene Dental</h3>
+                    <p>Cepilla los dientes de tu mascota regularmente o utiliza juguetes dentales para prevenir la acumulación de placa y problemas dentales.</p>
+                </div>
+                <div class="health-tip-card">
+                    <h3>Atención al Estrés</h3>
+                    <p>Observa si tu mascota muestra signos de estrés o ansiedad. Proporciónale un espacio tranquilo y seguro, y evita cambios bruscos en su rutina.</p>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

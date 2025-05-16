@@ -120,12 +120,19 @@ body {
     width: 100%;
 }
 
-/* Formulario */
+.title-with-help {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
 .form-container {
     max-width: 400px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 20px;
     font-family: 'Poppins', sans-serif;
+    position: relative;
 }
 
 .form-container h1 {
@@ -136,26 +143,6 @@ body {
     color: #000;
     font-family: 'Poppins', sans-serif;
     line-height: 0.75;
-}
-
-.reminder-count {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    background-color: #dcdcdc;
-    border-radius: 50%;
-    font-size: 12px;
-    margin-left: 5px;
-}
-
-/* Estilos para el tooltip de ayuda */
-.title-with-help {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
 }
 
 .help-icon {
@@ -171,10 +158,10 @@ body {
 
 .help-tooltip {
     display: none;
-    position: fixed;
-    top: 40%; /* Adjusted from 45% to 40% to match the previous CSS */
+    position: absolute;
+    top: 55px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     width: calc(100% - 60px);
     max-width: 400px;
     background-color: #dcdcdc;
@@ -195,133 +182,116 @@ body {
     text-align: justify; /* Justifica el texto del tooltip */
 }
 
-/* Reminders Section */
-.reminders-section {
-    margin-top: -10px;
-    padding: 10px 20px;
-}
-
-.reminder-item {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #fff;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.reminder-icon {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.reminder-time {
-    margin-left: auto;
-    font-weight: 400;
-    color: #666;
-}
-
-/* Calendar Section */
-.calendar-section {
-    margin: -20px 20px 0 20px;
-    padding: 10px;
-}
-
-.calendar-section h2 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #000;
-    text-align: left;
-}
-
-.month-selector {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.month-selector button {
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 5px 10px;
-}
-
-#current-month {
-    font-size: 16px;
-    font-weight: 600;
-    color: #F44336;
-    margin: 0 10px;
-}
-
-.calendar-grid {
+.button-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 380px;
+    margin: 20px auto 0 auto;
+    padding: 0 25px;
+    justify-content: center;
 }
 
-.calendar-day {
-    font-size: 12px;
-    font-weight: 600;
-    color: #666;
-    text-align: center;
-}
-
-.calendar-date {
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-    text-align: center;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.calendar-date:hover {
-    background-color: #f0f0f0;
-}
-
-.calendar-date.selected {
-    background-color: #F44336;
-    color: white;
-}
-
-.calendar-date.disabled {
-    color: #ccc;
-}
-
-.new-reminder-btn {
+.health-button {
     background-color: #B0C4D8;
-    color: #fff;
-    width: 100%;
-    max-width: 250px;
-    padding: 12px 40px;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 170px;
+    font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    border: none;
-    border-radius: 8px;
+    color: #fff;
+    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: block;
-    margin: 10px auto;
+    white-space: normal;
+    word-break: break-word;
 }
 
-.new-reminder-btn:hover {
+.health-button:hover {
     background-color: #A0B8CC;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Health Tips Section */
+.health-tips-section {
+    margin: 30px 0;
+    padding: 0 10px;
+}
+
+.health-tips-section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.health-tips-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.health-tips-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.health-tips-container::-webkit-scrollbar-thumb {
+    background-color: #ff6200; /* Mismo color naranja que el borde y el icono de los consejos */
+    border-radius: 10px;
+}
+
+.health-tips-container::-webkit-scrollbar-track {
+    background: #fff; /* Mismo fondo blanco que el interior de los consejos */
+    border-radius: 10px;
+}
+
+.health-tip-card {
+    flex: 0 0 250px;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 18px 18px 16px 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #ff6200; /* Color naranja ya utilizado */
+}
+
+.health-tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Icono decorativo superior derecha */
+.health-tip-card::before {
+    content: "🧡"; /* Ícono coherente con salud/bienestar */
+    font-size: 20px;
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    color: #ff6200;
+}
+
+/* Título del consejo */
+.health-tip-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff6200; /* Mismo tono naranja */
+    margin: 12px 0 10px 0;
+}
+
+/* Texto del consejo */
+.health-tip-card p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
 }

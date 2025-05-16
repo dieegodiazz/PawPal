@@ -31,10 +31,10 @@ body {
 }
 
 .nav-menu {
-    list-style:none;
+    list-style: none;
     display: none;
     flex-direction: column;
-    position:absolute;
+    position: absolute;
     top: 35px;
     left: 20px;
     background-color: #dcdcdc;
@@ -120,12 +120,19 @@ body {
     width: 100%;
 }
 
-/* Formulario */
+.title-with-help {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
 .form-container {
     max-width: 400px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 20px;
     font-family: 'Poppins', sans-serif;
+    position: relative;
 }
 
 .form-container h1 {
@@ -138,130 +145,88 @@ body {
     line-height: 0.75;
 }
 
-/* Estilos para el tooltip de ayuda */
-.title-with-help {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.help-icon {
-    margin-left: 10px;
-    cursor: pointer;
-    color: #a9a9a9;
-    font-size: 20px;
-}
-
-.help-icon:hover {
-    color: #8888;
-}
-
-.help-tooltip {
-    display: none;
-    position: fixed;
-    top: 40%; /* Moved up from 44% to 40% */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - 60px);
-    max-width: 400px;
-    background-color: #dcdcdc;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 5px 15px 15px 15px; /* Reduced top padding to 5px */
-    z-index: 2000;
-    text-align: left;
-}
-
-.help-tooltip ul {
-    margin: 0;
-    padding-left: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    color: #333;
-    line-height: 1.5;
-}
-
-.stats-container {
-    max-width: 400px;
-    margin: -10px auto;
-    padding: 20px;
-}
-
-.stat-box {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    color: #333;
-    font-family: 'Poppins', sans-serif;
-    position: relative;
-}
-
-.stat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.stat-label {
-    font-size: 16px;
-    font-weight: 600;
-    color: #ff6200;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.stat-label i {
-    font-size: 18px;
-    color: #ff6200;
-}
-
-.stat-value {
-    font-size: 28px;
-    font-weight: 700;
-    color: #000;
-    display: block;
-    margin-top: -30px;
-}
-
-.activity-chart {
-    margin-top: 5px;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.progress-wrapper {
+/* Vital Signs Styles */
+.vital-signs {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 2px;
+    gap: 15px;
+    margin-top: 10px;
 }
 
-.progress-indicator {
-    font-size: 11px;
-    font-weight: 600;
-    color: #fff;
-    background-color: #00cc00;
-    border-radius: 50%;
-    padding: 4px 7px;
-    line-height: 1;
-}
-
-.progress-chart {
-    width: 24px;
-    height: 24px;
-}
-
-.progress-goal {
-    font-size: 12px;
-    color: #00cc00;
-    display: block;
-    margin-top: 5px;
+.vital-sign-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.vital-sign-box h3 {
+    font-size: 18px;
     font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+    margin: 10px 0 5px 0;
+    color: #333;
+}
+
+.vital-sign-box p {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.vital-sign-box p span {
+    color: #ff4d4d;
+}
+
+.vital-chart {
+    height: 120px !important;
+    width: 100 !important;
+    margin: 0;
+}
+
+.vital-sign-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.vital-sign-box.small {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.vital-sign-box.small h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    padding-top: 12px;
+    color: #333;
+}
+
+.vital-sign-box.small.temperature-box h3 {
+    padding-top: 21px; /* Increased from 18px to 21px to lower the "Temperatura" title further */
+}
+
+.vital-sign-box.small p {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    color: #333;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.vital-sign-box.small p span {
+    color: #ff4d4d;
 }
