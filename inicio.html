@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-left">
-            <div class="menu-icon" id="menu-toggle">&#9776;</div>
+            <div class="menu-icon" id="menu-toggle">☰</div>
             <img src="imagenes/logoSinFondo.png" alt="P Logo" class="logo1" />
             <img src="imagenes/nombreSinFondo.png" alt="Nombre Logo" class="logo2" />
         </div>
@@ -31,16 +31,6 @@
             <span>Elige tu mascota</span>
         </h1>
         <div class="profile-grid">
-            <div class="profile">
-                <div class="delete-button">-</div>
-                <img src="imagenes/carrousel6.jpg" alt="Lulú">
-                <p>Lulú</p>
-            </div>
-            <div class="profile">
-                <div class="delete-button">-</div>
-                <img src="imagenes/carrousel7.jpg" alt="Toby">
-                <p>Toby</p>
-            </div>
             <div class="profile add-profile">
                 <div class="add-icon">+</div>
                 <p>Añadir perfil</p>
@@ -50,13 +40,31 @@
     </div>
 
     <div id="delete-modal" class="modal">
-    <div class="modal-content">
-        <p>¿Estás seguro de que deseas eliminar este perfil?</p>
-        <div class="modal-buttons">
-            <button id="confirm-delete" class="confirm-btn">Aceptar</button>
-            <button id="cancel-delete" class="cancel-btn">Cancelar</button>
+        <div class="modal-content">
+            <p>¿Estás seguro de que deseas eliminar este perfil?</p>
+            <div class="modal-buttons">
+                <button id="confirm-delete" class="confirm-btn">Aceptar</button>
+                <button id="cancel-delete" class="cancel-btn">Cancelar</button>
+            </div>
         </div>
     </div>
-</div>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <p>Perfil eliminado correctamente</p>
+            <div class="modal-buttons">
+                <button id="success-ok" class="confirm-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="register-success-modal" class="modal">
+        <div class="modal-content">
+            <p>Perfil registrado correctamente</p>
+            <div class="modal-buttons">
+                <button id="register-success-ok" class="confirm-btn">OK</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
