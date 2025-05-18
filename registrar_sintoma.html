@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monitorización de Constantes</title>
-    <link rel="stylesheet" href="constantes.css">
+    <title>Registrar Síntoma</title>
+    <link rel="stylesheet" href="registrar_sintoma.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="constantes.js" defer></script>
+    <script src="calpatologico.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -29,37 +29,38 @@
     </nav>
 
     <div class="back-link-container">
-        <a href="salud.html" class="back-link">
+        <a href="calpatologico.html" class="back-link">
             <i class="fas fa-arrow-left"></i> Volver
         </a>
     </div>
 
     <div class="form-container">
         <div class="title-with-help">
-            <h1>Constantes Vitales Actuales</h1>
+            <h1>Registrar Síntoma</h1>
         </div>
-
-        <div class="vital-signs">
-            <div class="vital-sign-box">
-                <h3>Frecuencia cardíaca</h3>
-                <p><span id="heart-rate">74</span> LPM</p>
-                <canvas id="heartRateChart" class="vital-chart"></canvas>
+        
+        <form id="pet-form">
+            <div class="form-group">
+                <input type="text" id="synt-desc" name="synt-desc" placeholder="Descripción" required>
             </div>
-
-            <div class="vital-sign-box">
-                <h3>Oxígeno</h3>
-                <p><span id="oxygen-level">95</span> %</p>
-                <canvas id="oxygenChart" class="vital-chart"></canvas>
+            <div class="form-group">
+                <input type="date" id="synt-date" name="synt-date" required>
             </div>
+            <div class="form-group">
+                <input type="time" id="synt-time" name="synt-time" required>
+            </div>
+            <div class="form-group">
+                <input type="text" id="synt-grav" name="synt-grav" placeholder="Intensidad del Síntoma" required>
+            </div>
+        </form>
 
-            <div class="vital-sign-row">
-                <div class="vital-sign-box small">
-                    <h3>Frecuencia respiratoria</h3>
-                    <p><span id="resp-rate">20</span> RPM</p>
-                </div>
-                <div class="vital-sign-box small temperature-box">
-                    <h3>Temperatura</h3>
-                    <p><span id="temperature">38.2</span>°C</p>
+        <button class="new-reminder-btn" id="new-reminder-btn">Añadir Síntoma</button>
+
+        <div id="delete-modal" class="modal">
+            <div class="modal-content">
+                <p>¡Síntoma registrado con éxito!</p>
+                <div class="modal-buttons">
+                    <button id="confirm-delete" class="confirm-btn">OK</button>
                 </div>
             </div>
         </div>

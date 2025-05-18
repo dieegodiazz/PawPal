@@ -31,17 +31,17 @@ body {
 }
 
 .nav-menu {
-    list-style:none;
+    list-style: none;
     display: none;
     flex-direction: column;
-    position:absolute;
+    position: absolute;
     top: 35px;
     left: 20px;
     background-color: #dcdcdc;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
+    z-index: 3000; /* Aumenta el z-index para superponer el menú */
     width: 150px;
 }
 

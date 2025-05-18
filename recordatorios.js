@@ -1,18 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Determine which page is loaded based on the document title
     const pageTitle = document.title;
 
-    if (pageTitle === 'Recordatorios') {
-        // Code for recordatorios.html
+    // Función para asignar color según título del recordatorio
+    function assignColorByTitle(title) {
+        const lowerTitle = title.toLowerCase();
+        if (lowerTitle.includes('paseo') || lowerTitle.includes('pasear')) {
+            return '#4CAF50'; // Verde
+        } else if (lowerTitle.includes('comida') || lowerTitle.includes('pienso') || lowerTitle.includes('alimentar')) {
+            return '#FFC107'; // Amarillo
+        } else if (lowerTitle.includes('medicina') || lowerTitle.includes('medicación')) {
+            return '#F44336'; // Rojo
+        } else if (lowerTitle.includes('veterinario') || lowerTitle.includes('cita')) {
+            return '#2196F3'; // Azul
+        } else if (lowerTitle.includes('baño')) {
+            return '#9C27B0'; // Violeta
+        } else {
+            return '#9E9E9E'; // Gris (otros)
+        }
+    }
 
-        // Menu Toggle
+    if (pageTitle === 'Recordatorios') {
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
         menuToggle.addEventListener('click', () => {
             navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
         });
 
-        // Help Tooltip Toggle
         const helpIcon = document.querySelector('.help-icon');
         const helpTooltip = document.getElementById('help-tooltip');
         if (helpIcon && helpTooltip) {
@@ -21,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Calendar Logic
         const calendarGrid = document.getElementById('calendar-grid');
         const currentMonthSpan = document.getElementById('current-month');
         const prevMonthBtn = document.getElementById('prev-month');
@@ -29,18 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const remindersList = document.getElementById('reminders-list');
         const reminderCount = document.querySelector('.reminder-count');
 
-        let currentDate = new Date(); // Fecha actual del sistema
-        let selectedDate = new Date(); // Por defecto, selecciona el día actual
+        let currentDate = new Date();
+        let selectedDate = new Date();
 
-        // Load reminders from localStorage or use default ones
         let allReminders = JSON.parse(localStorage.getItem('reminders')) || [
-            { date: '2025-04-20', time: '13:30', title: 'Reponer pienso', color: '#FFC107' },
-            { date: '2025-04-20', time: '18:00', title: 'Pasear a Toby', color: '#4CAF50' },
-            { date: '2025-04-20', time: '20:30', title: 'Dar medicina', color: '#F44336' },
-            { date: '2025-04-21', time: '09:00', title: 'Cita veterinario', color: '#4CAF50' },
-            { date: '2025-04-21', time: '15:00', title: 'Comprar juguete', color: '#FFC107' },
-            { date: '2025-04-22', time: '11:00', title: 'Baño', color: '#F44336' },
+            { date: '2025-04-20', time: '13:30', title: 'Reponer pienso' },
+            { date: '2025-04-20', time: '18:00', title: 'Pasear a Toby' },
+            { date: '2025-04-20', time: '20:30', title: 'Dar medicina' },
+            { date: '2025-04-21', time: '09:00', title: 'Cita veterinario' },
+            { date: '2025-04-21', time: '15:00', title: 'Comprar juguete' },
+            { date: '2025-04-22', time: '11:00', title: 'Baño' },
         ];
+
+        allReminders = allReminders.map(reminder => ({
+            ...reminder,
+            color: assignColorByTitle(reminder.title)
+        }));
 
         function updateCalendar() {
             calendarGrid.innerHTML = `
@@ -65,10 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ];
             currentMonthSpan.textContent = monthNames[month];
 
-            // Adjust firstDay for Monday start (0 = Monday, 6 = Sunday)
             const adjustedFirstDay = firstDay === 0 ? 6 : firstDay - 1;
 
-            // Add empty slots for days before the 1st
             for (let i = 0; i < adjustedFirstDay; i++) {
                 const dayDiv = document.createElement('div');
                 dayDiv.className = 'calendar-date disabled';
@@ -76,13 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 calendarGrid.appendChild(dayDiv);
             }
 
-            // Add days of the current month
             for (let day = 1; day <= daysInMonth; day++) {
                 const dayDiv = document.createElement('div');
                 dayDiv.className = 'calendar-date';
                 dayDiv.textContent = day;
 
-                // Resaltar el día actual
                 const today = new Date();
                 if (
                     day === today.getDate() &&
@@ -105,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 calendarGrid.appendChild(dayDiv);
             }
 
-            // Add days of the next month to fill the grid
             const totalSlots = adjustedFirstDay + daysInMonth;
             const remainingSlots = (7 - (totalSlots % 7)) % 7;
             for (let i = 1; i <= remainingSlots; i++) {
@@ -120,26 +131,34 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectedDateStr = `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, '0')}-${String(selectedDate.getDate()).padStart(2, '0')}`;
             remindersList.innerHTML = '';
             const filteredReminders = allReminders.filter(reminder => reminder.date === selectedDateStr);
-            
-            filteredReminders.forEach(reminder => {
-                const reminderDiv = document.createElement('div');
-                reminderDiv.className = 'reminder-item';
-                reminderDiv.setAttribute('data-time', reminder.time);
-                reminderDiv.setAttribute('data-date', reminder.date);
-                reminderDiv.innerHTML = `
-                    <span class="reminder-icon" style="background-color: ${reminder.color};"></span>
-                    ${reminder.title}
-                    <span class="reminder-time">${reminder.time}h</span>
-                `;
-                remindersList.appendChild(reminderDiv);
-            });
+
+            if (filteredReminders.length === 0) {
+                const noRemindersDiv = document.createElement('div');
+                noRemindersDiv.className = 'reminder-item';
+                noRemindersDiv.innerHTML = '<span class="reminder-title">No hay recordatorios registrados para esta fecha.</span>';
+                remindersList.appendChild(noRemindersDiv);
+            } else {
+                filteredReminders.forEach(reminder => {
+                    const reminderDiv = document.createElement('div');
+                    reminderDiv.className = 'reminder-item';
+                    reminderDiv.setAttribute('data-time', reminder.time);
+                    reminderDiv.setAttribute('data-date', reminder.date);
+                    reminderDiv.style.borderLeft = `4px solid ${reminder.color}`;
+                    reminderDiv.innerHTML = `
+                        ${reminder.title}
+                        <span class="reminder-time">${reminder.time}h</span>
+                    `;
+                    remindersList.appendChild(reminderDiv);
+                });
+            }
 
             updateReminderCount();
         }
 
         function updateReminderCount() {
-            const count = remindersList.children.length;
-            reminderCount.textContent = count;
+            const selectedDateStr = `${selectedDate.getFullYear()}-${String(selectedDate.getMonth() + 1).padStart(2, '0')}-${String(selectedDate.getDate()).padStart(2, '0')}`;
+            const filteredReminders = allReminders.filter(reminder => reminder.date === selectedDateStr);
+            reminderCount.textContent = filteredReminders.length;
         }
 
         prevMonthBtn.addEventListener('click', () => {
@@ -152,29 +171,23 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCalendar();
         });
 
-        // Initial setup
         updateCalendar();
         updateReminders();
 
-        // Navigate to nuevo_recordatorio.html when "Nuevo Recordatorio" button is clicked
         const newReminderBtn = document.getElementById('new-reminder-btn');
         newReminderBtn.addEventListener('click', () => {
             window.location.href = 'nuevo_recordatorio.html';
         });
     } else if (pageTitle === 'Nuevo Recordatorio') {
-        // Code for nuevo_recordatorio.html
-
-        // Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
         menuToggle.addEventListener('click', () => {
             navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
         });
 
-        // File Input Handling
         const soundInput = document.getElementById('reminder-sound');
         const soundLabel = document.querySelector('.custom-file-label');
-        
+
         soundInput.addEventListener('change', () => {
             if (soundInput.files.length > 0) {
                 soundLabel.textContent = soundInput.files[0].name;
@@ -185,7 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Form Submission
         const petForm = document.getElementById('pet-form');
         const newReminderBtn = document.getElementById('new-reminder-btn');
         const modal = document.getElementById('delete-modal');
@@ -194,13 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
         newReminderBtn.addEventListener('click', (e) => {
             e.preventDefault();
 
-            // Reset invalid class on all inputs
             const inputs = petForm.querySelectorAll('input[required]');
             inputs.forEach(input => input.classList.remove('invalid'));
 
-            // Trigger HTML5 validation
             if (!petForm.checkValidity()) {
-                // Add invalid class to empty required fields
                 inputs.forEach(input => {
                     if (!input.validity.valid) {
                         input.classList.add('invalid');
@@ -210,55 +219,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Get form values
             const description = petForm.querySelector('#reminder-desc').value.trim();
             const date = petForm.querySelector('#reminder-date').value;
             const time = petForm.querySelector('#reminder-time').value;
             const sound = petForm.querySelector('#reminder-sound').files[0] ? petForm.querySelector('#reminder-sound').files[0].name : null;
 
             const reminderData = {
-                description: description,
-                date: date,
-                time: time || '00:00', // Default time if not provided
-                sound: sound,
+                description,
+                date,
+                time: time || '00:00',
+                sound,
             };
 
-            // Load existing reminders from localStorage
-            let allReminders = JSON.parse(localStorage.getItem('reminders')) || [
-                { date: '2025-04-20', time: '13:30', title: 'Reponer pienso', color: '#FFC107' },
-                { date: '2025-04-20', time: '18:00', title: 'Pasear a Toby', color: '#4CAF50' },
-                { date: '2025-04-20', time: '20:30', title: 'Dar medicina', color: '#F44336' },
-                { date: '2025-04-21', time: '09:00', title: 'Cita veterinario', color: '#4CAF50' },
-                { date: '2025-04-21', time: '15:00', title: 'Comprar juguete', color: '#FFC107' },
-                { date: '2025-04-22', time: '11:00', title: 'Baño', color: '#F44336' },
-            ];
+            let allReminders = JSON.parse(localStorage.getItem('reminders')) || [];
 
-            // Define colors for new reminders (cycle through a predefined set)
-            const colors = ['#FFC107', '#4CAF50', '#F44336'];
             const newReminder = {
                 date: reminderData.date,
                 time: reminderData.time,
                 title: reminderData.description,
-                color: colors[allReminders.length % colors.length], // Cycle through colors
+                color: assignColorByTitle(reminderData.description)
             };
 
-            // Add the new reminder to the array
             allReminders.push(newReminder);
-
-            // Save updated reminders to localStorage
             localStorage.setItem('reminders', JSON.stringify(allReminders));
 
-            // Show modal
             modal.style.display = 'flex';
 
-            // Handle modal accept button
             confirmBtn.addEventListener('click', () => {
                 modal.style.display = 'none';
                 window.location.href = 'recordatorios.html';
             });
         });
 
-        // Remove invalid class when the user starts typing
         const inputs = petForm.querySelectorAll('input[required]');
         inputs.forEach(input => {
             input.addEventListener('input', () => {

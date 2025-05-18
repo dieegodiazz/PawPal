@@ -122,10 +122,13 @@ body {
 
 /* Formulario */
 .form-container {
-    max-width: 400px;
+    max-width: 320px; /* Reduced to align with calendar width */
     margin: 0 auto;
-    padding: 0;
+    padding: 0 10px;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all children */
 }
 
 .form-container h1 {
@@ -172,7 +175,7 @@ body {
 .help-tooltip {
     display: none;
     position: fixed;
-    top: 40%; /* Adjusted from 45% to 40% to match the previous CSS */
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: calc(100% - 60px);
@@ -192,44 +195,78 @@ body {
     font-size: 14px;
     color: #333;
     line-height: 1.5;
-    text-align: justify; /* Justifica el texto del tooltip */
+    text-align: justify;
+}
+
+.h2-align {
+    padding-left: 24px; /* Ajusta este valor según el diseño de tus recordatorios */
+    text-align: left;
 }
 
 /* Reminders Section */
 .reminders-section {
-    margin-top: -10px;
-    padding: 10px 20px;
+    margin-top: 0; /* Removed negative margin to align with calendar */
+    padding: 0 15px 15px; /* Adjusted padding to match calendar */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center reminders */
 }
 
 .reminder-item {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #fff;
+    background-color: #FFFFFF;
     margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 280px;
+    position: relative;
+    font-size: 14px;
     font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.reminder-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #E0E0E0; /* Default color */
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.reminder-item[data-date="2025-04-20"][data-time="13:30"]::before { background-color: #FFC107; } /* Amarillo */
+.reminder-item[data-date="2025-04-20"][data-time="18:00"]::before { background-color: #4CAF50; } /* Verde */
+.reminder-item[data-date="2025-04-20"][data-time="20:30"]::before { background-color: #F44336; } /* Rojo */
+
+.reminder-time {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    margin-left: auto;
 }
 
 .reminder-icon {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.reminder-time {
-    margin-left: auto;
-    font-weight: 400;
-    color: #666;
+    display: none; /* Remove the circular icon, replaced with severity bar */
 }
 
 /* Calendar Section */
 .calendar-section {
-    margin: -20px 20px 0 20px;
-    padding: 10px;
+    margin: -30px; /* Removed negative margin to align with reminders */
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center calendar */
 }
 
 .calendar-section h2 {
@@ -238,6 +275,7 @@ body {
     margin-bottom: 10px;
     color: #000;
     text-align: left;
+    width: 100%;
 }
 
 .month-selector {
@@ -270,6 +308,7 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: max-content;
 }
 
 .calendar-day {
@@ -318,7 +357,7 @@ body {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: block;
-    margin: 10px auto;
+    margin: 30px auto 0 auto; /* Aumenta el espacio superior, elimina el inferior */
 }
 
 .new-reminder-btn:hover {

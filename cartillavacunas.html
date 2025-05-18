@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartilla de Vacunas</title>
+    <link rel="stylesheet" href="cartillavacunas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="cartillavacunas.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="menu-icon" id="menu-toggle">☰</div>
+            <img src="imagenes/logoSinFondo.png" alt="P Logo" class="logo1" />
+            <img src="imagenes/nombreSinFondo.png" alt="Nombre Logo" class="logo2" />
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#miperfil">Mi Perfil</a></li>
+            <li><a href="#cambiarmascota">Cambiar de Mascota</a></li>
+            <li><a href="#configfamilia">Configurar Familia</a></li>
+            <li><a href="#escaneartag">Escanear Tag</a></li>
+            <li><a href="#cerrarsesion">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <div class="back-link-container">
+        <a href="salud.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Volver
+        </a>
+    </div>
+
+    <div class="form-container">
+        <div class="title-with-help">
+            <h1>Cartilla de Vacunas</h1>
+        </div>
+
+        <div class="vaccines-section">
+            <h2>Vacunas Registradas</h2>
+            <div class="vaccines-list" id="vaccines-list">
+                <!-- Vacunas serán insertadas dinámicamente aquí -->
+            </div>
+        </div>
+
+        <div class="vaccines-section">
+            <h2>Vacunas Pendientes</h2>
+            <div class="vaccines-list" id="pending-vaccines-list">
+                <!-- Vacunas pendientes serán insertadas dinámicamente aquí -->
+            </div>
+        </div>
+
+        <button class="new-reminder-btn" id="register-vaccine-btn">Registrar Vacuna</button>
+
+        <!-- Modal para confirmar eliminación -->
+        <div id="delete-vaccine-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Confirmar Eliminación</h2>
+                <p id="delete-vaccine-message">¿Está seguro de que desea eliminar la vacuna?</p>
+                <div class="modal-buttons">
+                    <button class="confirm-btn" id="confirm-delete-btn">Aceptar</button>
+                    <button class="cancel-btn" id="cancel-delete-btn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para notificar eliminación exitosa -->
+        <div id="delete-success-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Eliminación Exitosa</h2>
+                <p>La vacuna se eliminó correctamente.</p>
+                <div class="modal-buttons">
+                    <button class="confirm-btn" id="success-ok-btn">OK</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para confirmar movimiento a registradas -->
+        <div id="move-vaccine-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Confirmar Movimiento</h2>
+                <p id="move-vaccine-message">¿Está seguro de que desea mover la vacuna?</p>
+                <div class="modal-buttons">
+                    <button class="confirm-btn" id="confirm-move-btn">Aceptar</button>
+                    <button class="cancel-btn" id="cancel-move-btn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para notificar movimiento exitoso -->
+        <div id="move-success-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Movimiento Exitoso</h2>
+                <p>La vacuna se cambió a la lista de vacunas registradas correctamente.</p>
+                <div class="modal-buttons">
+                    <button class="confirm-btn" id="move-ok-btn">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

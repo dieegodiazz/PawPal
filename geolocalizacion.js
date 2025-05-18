@@ -84,3 +84,51 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            // Alterna la visibilidad del menú
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Opción Inicio
+        const inicio = navMenu.querySelector('a[href="#inicio"]');
+        if (inicio) {
+            inicio.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'index.html';
+            });
+        }
+
+        // Opción Cambiar de Mascota
+        const cambiarMascota = navMenu.querySelector('a[href="#cambiarmascota"]');
+        if (cambiarMascota) {
+            cambiarMascota.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'inicio.html';
+            });
+        }
+
+        // Opción Cartilla Vacunas
+        const cartillaVacunas = navMenu.querySelector('a[href="#cartillavacunas"]');
+        if (cartillaVacunas) {
+            cartillaVacunas.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'cartillavacunas.html';
+            });
+        }
+
+        // Opción Cerrar Sesión
+        const cerrarSesion = navMenu.querySelector('a[href="#cerrarsesion"]');
+        if (cerrarSesion) {
+            cerrarSesion.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = 'login.html';
+            });
+        }
+    }
+});
