@@ -74,6 +74,24 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = 'login.html';
       });
     }
+
+    // Sobre Nosotros
+    const aboutLink = links.find(a => a.textContent.trim().toLowerCase() === 'sobre nosotros');
+    if (aboutLink) {
+      aboutLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'aboutus.html';
+      });
+    }
+
+    // FAQ
+    const faqLink = links.find(a => a.textContent.trim().toLowerCase() === 'faq');
+    if (faqLink) {
+      faqLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'faq.html';
+      });
+    }
   }
 });
 

@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Opción "Inicio" e "Iniciar sesión" del menú sándwich
+    // Opción "Inicio", "Iniciar sesión" y "Sobre Nosotros" del menú sándwich
     if (navMenu) {
         const links = Array.from(navMenu.getElementsByTagName('a'));
         // Inicio
@@ -101,6 +101,31 @@ document.addEventListener('DOMContentLoaded', function() {
             inicioLink.addEventListener('click', function(e) {
                 e.preventDefault();
                 window.location.href = 'index.html';
+            });
+        }
+        // Iniciar sesión
+        const loginLink = links.find(a => a.textContent.trim().toLowerCase() === 'iniciar sesión');
+        if (loginLink) {
+            loginLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = 'login.html';
+            });
+        }
+        // Sobre Nosotros
+        const aboutLink = links.find(a => a.textContent.trim().toLowerCase() === 'sobre nosotros');
+        if (aboutLink) {
+            aboutLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = 'aboutus.html';
+            });
+        }
+
+        // FAQ
+        const faqLink = links.find(a => a.textContent.trim().toLowerCase() === 'faq');
+        if (faqLink) {
+            faqLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = 'faq.html';
             });
         }
     }
@@ -127,5 +152,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
 });

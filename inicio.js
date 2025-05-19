@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (text === 'inicio') {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
-                    window.location.href = 'inicio.html';
+                    window.location.href = 'index.html';
                 });
             }
             if (text === 'cerrar sesión') {
